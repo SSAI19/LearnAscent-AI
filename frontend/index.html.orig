@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" data-heat-on="1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LearnAscent AI — Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#08070a; --void-2:#0d0c10; --panel:#121116;
+    --gold:#d9a94e; --gold-dim:#4a3a1c; --gold-glow:rgba(217,169,78,0.35);
+    --teal:#4fb89c; --teal-dim:#1c3a34;
+    --coral:#e2665a; --coral-dim:#3a1f1c;
+    --text:#ede7da; --text-mute:#8a8578; --text-faint:#54524a;
+    --line:#221f24;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--void); color:var(--text);
+    font-family:'Inter',sans-serif; font-weight:400;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif; font-weight:500; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--text-mute);
+  }
+  section{position:relative; padding:96px 24px; max-width:1040px; margin:0 auto;}
+  .bg-particles{position:fixed; inset:0; z-index:0; pointer-events:none;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 32px; backdrop-filter:blur(10px);
+    background:linear-gradient(to bottom, rgba(8,7,10,0.9), transparent);
+  }
+  nav .brand{font-family:'Fraunces',serif; font-size:17px; font-weight:600; letter-spacing:0.01em;}
+  nav .brand span{color:var(--gold);}
+  nav .links{display:flex; gap:28px; font-size:13px; color:var(--text-mute);}
+  nav .links a{color:inherit; text-decoration:none; transition:color .2s;}
+  nav .links a:hover{color:var(--text);}
+
+  /* ---------- HERO / DNA ---------- */
+  #hero{
+    min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; max-width:100%; padding-top:60px;
+  }
+  #dna-canvas-wrap{
+    position:relative; width:100%; max-width:640px; height:480px; margin:0 auto;
+  }
+  #dna-canvas{width:100%; height:100%; display:block; filter: drop-shadow(0 0 22px rgba(217,169,78,0.28)) drop-shadow(0 0 46px rgba(217,169,78,0.14));}
+  .hero-copy{position:relative; z-index:2; margin-top:-40px;}
+  .hero-copy .eyebrow{margin-bottom:14px;}
+  .hero-copy h1{font-size:clamp(32px,5vw,52px); line-height:1.08; max-width:680px; margin:0 auto 16px;}
+  .hero-copy h1 em{font-style:italic; color:var(--gold);}
+  .hero-copy p{color:var(--text-mute); font-size:16px; max-width:480px; margin:0 auto; line-height:1.6;}
+
+  .mission-card{
+    position:relative; z-index:2; margin:36px auto 0; max-width:420px;
+    background:rgba(18,17,22,0.7); border:0.5px solid var(--line); border-radius:14px;
+    padding:18px 22px; text-align:left; backdrop-filter:blur(6px);
+    display:flex; align-items:center; gap:14px;
+    animation:missionIn 1.2s ease .4s both;
+  }
+  @keyframes missionIn{from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);}}
+  .mission-card .dot{width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0;
+    box-shadow:0 0 12px var(--gold-glow); animation:pulseDot 2.4s ease-in-out infinite;}
+  @keyframes pulseDot{0%,100%{opacity:.6;} 50%{opacity:1;}}
+  .mission-card .body{flex:1;}
+  .mission-card .label{font-size:11px; color:var(--text-mute); text-transform:uppercase; letter-spacing:.1em; margin-bottom:4px;}
+  .mission-card .title{font-size:14px; font-weight:500;}
+
+  .stat-row{display:flex; gap:28px; justify-content:center; margin-top:40px; flex-wrap:wrap;}
+  .stat{text-align:center;}
+  .stat .num{font-family:'Fraunces',serif; font-size:30px; color:var(--gold);}
+  .stat .lbl{font-size:11px; color:var(--text-mute); text-transform:uppercase; letter-spacing:.08em; margin-top:4px;}
+
+  /* ---------- MOUNTAIN SECTION ---------- */
+  #mountain .section-head{text-align:center; margin-bottom:56px;}
+  #mountain .section-head h2{font-size:clamp(26px,3.6vw,36px); margin:10px 0 12px;}
+  #mountain .section-head p{color:var(--text-mute); max-width:560px; margin:0 auto; font-size:15px; line-height:1.6;}
+
+  .legend{display:flex; gap:24px; justify-content:center; margin-bottom:36px; flex-wrap:wrap;}
+  .legend .item{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-mute);}
+  .legend .sw{width:10px; height:10px; border-radius:50%;}
+
+  #mountain-svg-wrap{position:relative; width:100%; overflow:visible;}
+  #mountain-svg{width:100%; height:auto; display:block;}
+
+  .track-label{
+    position:absolute; font-family:'JetBrains Mono',monospace; font-size:11px;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--text-mute);
+  }
+
+  .node-tooltip{
+    position:absolute; pointer-events:none; opacity:0; transition:opacity .15s;
+    background:var(--panel); border:0.5px solid var(--line); border-radius:8px;
+    padding:10px 13px; font-size:12px; max-width:220px; z-index:30;
+    box-shadow:0 12px 32px rgba(0,0,0,0.5);
+  }
+  .node-tooltip .t-label{font-weight:500; margin-bottom:3px; color:var(--text);}
+  .node-tooltip .t-detail{color:var(--text-mute); font-size:11px; line-height:1.5;}
+
+  /* ---------- ADAPTATION DEMO ---------- */
+  #adapt{text-align:center;}
+  #adapt .section-head h2{font-size:clamp(26px,3.6vw,36px); margin:10px 0 12px;}
+  #adapt .section-head p{color:var(--text-mute); max-width:560px; margin:0 auto 8px; font-size:15px; line-height:1.6;}
+
+  .assessment-card{
+    max-width:480px; margin:40px auto 0; background:var(--panel); border:0.5px solid var(--line);
+    border-radius:14px; padding:26px 28px; text-align:left;
+  }
+  .assessment-card .row{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;}
+  .assessment-card .skill{font-family:'Fraunces',serif; font-size:19px;}
+  .assessment-card .score{font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--coral);}
+  .assessment-card .note{font-size:13px; color:var(--text-mute); line-height:1.6; margin:10px 0 20px;}
+  #simulate-btn{
+    width:100%; padding:13px; border-radius:9px; border:0.5px solid var(--gold-dim);
+    background:linear-gradient(180deg, rgba(217,169,78,0.14), rgba(217,169,78,0.05));
+    color:var(--gold); font-family:'Inter',sans-serif; font-weight:500; font-size:14px;
+    cursor:pointer; transition:all .25s;
+  }
+  #simulate-btn:hover{border-color:var(--gold); background:rgba(217,169,78,0.2);}
+  #simulate-btn:disabled{opacity:.4; cursor:default;}
+
+  .route-diff{
+    max-width:640px; margin:40px auto 0; text-align:left;
+    opacity:0; max-height:0; overflow:hidden; transition:opacity .5s ease, max-height .6s ease;
+  }
+  .route-diff.show{opacity:1; max-height:900px;}
+  .route-diff .msg{
+    font-size:14px; color:var(--coral); background:var(--coral-dim); border-radius:9px;
+    padding:12px 16px; margin-bottom:20px; border:0.5px solid rgba(226,102,90,0.3);
+  }
+  .route-diff .steps{display:flex; flex-direction:column; gap:8px;}
+  .step-row{
+    display:flex; align-items:center; gap:12px; padding:10px 14px; border-radius:8px;
+    background:rgba(217,169,78,0.06); border:0.5px solid var(--gold-dim); font-size:13px;
+    opacity:0; transform:translateX(-8px); animation:stepIn .4s ease forwards;
+  }
+  .step-row .idx{font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:11px; width:16px;}
+  .step-row .lbl{flex:1;}
+  .step-row .hrs{color:var(--text-mute); font-family:'JetBrains Mono',monospace; font-size:11px;}
+  @keyframes stepIn{to{opacity:1; transform:translateX(0);}}
+
+  /* ---------- MENTOR ROBOT ---------- */
+  #mentor{
+    position:fixed; bottom:28px; right:28px; z-index:60; cursor:pointer;
+    width:56px; height:56px; animation:float 3.6s ease-in-out infinite;
+  }
+  @keyframes float{0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);}}
+  #mentor svg{width:100%; height:100%; filter:drop-shadow(0 6px 16px rgba(217,169,78,0.25));}
+  #mentor-panel{
+    position:fixed; bottom:96px; right:28px; z-index:60; width:280px;
+    background:var(--panel); border:0.5px solid var(--line); border-radius:14px;
+    padding:18px 20px; font-size:13px; line-height:1.6; color:var(--text-mute);
+    opacity:0; transform:translateY(10px) scale(.97); pointer-events:none;
+    transition:all .25s ease; box-shadow:0 20px 50px rgba(0,0,0,0.5);
+  }
+  #mentor-panel.open{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
+  #mentor-panel .who{font-family:'Fraunces',serif; color:var(--gold); font-size:14px; margin-bottom:8px;}
+
+  footer{text-align:center; padding:60px 24px 80px; color:var(--text-faint); font-size:12px;}
+
+  /* ---------- AUTH PAGE ---------- */
+  #auth-overlay{
+    position:fixed; inset:0; z-index:100; background:var(--void);
+    display:flex; align-items:center; justify-content:center;
+    opacity:1; pointer-events:auto; transition:opacity .3s ease;
+  }
+  #auth-overlay.hidden{opacity:0; pointer-events:none;}
+
+  #onboarding-overlay{
+    position:fixed; inset:0; z-index:100; background:var(--void);
+    display:flex; align-items:center; justify-content:center;
+    opacity:1; pointer-events:auto; transition:opacity .3s ease;
+    overflow-y:auto; padding:40px 0;
+  }
+  #onboarding-overlay.hidden{opacity:0; pointer-events:none; display:none;}
+  #onboarding-career-results{
+    position:absolute; top:100%; left:0; right:0; z-index:5;
+    background:var(--panel); border:0.5px solid var(--line); border-radius:8px;
+    margin-top:4px; max-height:220px; overflow-y:auto; display:none;
+  }
+  #onboarding-career-results.show{display:block;}
+  #onboarding-career-results .career-option{
+    padding:10px 14px; cursor:pointer; font-size:13px; color:var(--text);
+    border-bottom:0.5px solid var(--line);
+  }
+  #onboarding-career-results .career-option:last-child{border-bottom:none;}
+  #onboarding-career-results .career-option:hover{background:rgba(217,169,78,0.1); color:var(--gold);}
+
+  #auth-container{
+    width:100%; max-width:420px; padding:40px;
+  }
+
+  .auth-header{text-align:center; margin-bottom:36px;}
+  .auth-header .brand{font-family:'Fraunces',serif; font-size:24px; font-weight:600; letter-spacing:0.01em; margin-bottom:12px;}
+  .auth-header .brand span{color:var(--gold);}
+  .auth-header p{color:var(--text-mute); font-size:14px; line-height:1.6;}
+
+  .auth-form{display:flex; flex-direction:column; gap:16px;}
+  
+  .form-group{display:flex; flex-direction:column; gap:8px;}
+  .form-group label{font-size:12px; font-weight:500; color:var(--text-mute); text-transform:uppercase; letter-spacing:.08em;}
+  .form-group input{
+    background:var(--panel); border:0.5px solid var(--line); border-radius:8px;
+    padding:12px 14px; color:var(--text); font-family:'Inter',sans-serif; font-size:14px;
+    transition:border-color .2s;
+  }
+  .form-group input:focus{outline:none; border-color:var(--gold);}
+  .form-group input.error{border-color:var(--coral);}
+  
+  .error-message{font-size:12px; color:var(--coral); margin-top:4px; display:none;}
+  .error-message.show{display:block;}
+
+  .auth-button{
+    background:linear-gradient(180deg, rgba(217,169,78,0.2), rgba(217,169,78,0.08));
+    border:0.5px solid var(--gold-dim); border-radius:8px;
+    padding:13px 16px; color:var(--gold); font-family:'Inter',sans-serif; font-weight:500;
+    font-size:14px; cursor:pointer; transition:all .25s;
+  }
+  .auth-button:hover:not(:disabled){
+    background:linear-gradient(180deg, rgba(217,169,78,0.3), rgba(217,169,78,0.15));
+    border-color:var(--gold);
+  }
+  .auth-button:disabled{opacity:.5; cursor:default;}
+
+  .auth-toggle{
+    text-align:center; color:var(--text-mute); font-size:13px; margin-top:20px;
+  }
+  .auth-toggle button{
+    background:none; border:none; color:var(--gold); cursor:pointer; font-weight:500;
+    text-decoration:underline; font-size:13px; padding:0; margin:0;
+  }
+  .auth-toggle button:hover{color:var(--gold-glow);}
+
+  .nav-user{
+    display:flex; gap:16px; align-items:center; font-size:13px;
+  }
+  .nav-user span{color:var(--text-mute);}
+  .nav-logout{
+    background:none; border:none; color:var(--gold); cursor:pointer; font-weight:500;
+    text-decoration:underline; padding:0; margin:0;
+  }
+  .nav-logout:hover{color:var(--gold-glow);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Auth overlay -->
+<div id="auth-overlay">
+  <div id="auth-container">
+    <div class="auth-header">
+      <div class="brand">Learn<span>Ascent</span></div>
+      <p>Unlock your personalized learning path powered by O*NET data.</p>
+    </div>
+
+    <!-- Login form -->
+    <form id="login-form" class="auth-form">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" placeholder="your@email.com" required>
+        <div class="error-message" id="login-email-error"></div>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="••••••••" required>
+        <div class="error-message" id="login-password-error"></div>
+      </div>
+      <button type="submit" class="auth-button" id="login-submit">Sign In</button>
+      <div class="auth-toggle">
+        Don't have an account? <button type="button" id="show-signup">Create one</button>
+      </div>
+    </form>
+
+    <!-- Signup form -->
+    <form id="signup-form" class="auth-form" style="display:none;">
+      <div class="form-group">
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" placeholder="your@email.com" required>
+        <div class="error-message" id="signup-email-error"></div>
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" placeholder="••••••••" required>
+        <div class="error-message" id="signup-password-error"></div>
+      </div>
+      <div class="form-group">
+        <label for="signup-confirm">Confirm Password</label>
+        <input type="password" id="signup-confirm" placeholder="••••••••" required>
+        <div class="error-message" id="signup-confirm-error"></div>
+      </div>
+      <button type="submit" class="auth-button" id="signup-submit">Create Account</button>
+      <div class="auth-toggle">
+        Already have an account? <button type="button" id="show-login">Sign in</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Onboarding overlay: shown after auth when the account has no learner
+     profile yet. Real profile creation only — no fake/demo data is ever
+     assigned automatically to a signed-in user. -->
+<div id="onboarding-overlay" class="hidden">
+  <div id="auth-container">
+    <div class="auth-header">
+      <div class="brand">Learn<span>Ascent</span></div>
+      <p>Tell us where you're headed — this builds your real Learner DNA and roadmap.</p>
+    </div>
+    <form id="onboarding-form" class="auth-form">
+      <div class="form-group">
+        <label for="onboarding-name">Your name</label>
+        <input type="text" id="onboarding-name" placeholder="Jordan" required>
+        <div class="error-message" id="onboarding-name-error"></div>
+      </div>
+      <div class="form-group" style="position:relative;">
+        <label for="onboarding-career">Target career</label>
+        <input type="text" id="onboarding-career" placeholder="Search O*NET occupations…" autocomplete="off" required>
+        <div class="error-message" id="onboarding-career-error"></div>
+        <div id="onboarding-career-results"></div>
+      </div>
+      <div class="form-group">
+        <label for="onboarding-minutes">Minutes available per day</label>
+        <input type="number" id="onboarding-minutes" min="10" max="480" value="30" required>
+      </div>
+      <div class="form-group">
+        <label for="onboarding-weeks">Target duration (weeks)</label>
+        <input type="number" id="onboarding-weeks" min="1" max="104" value="12" required>
+      </div>
+      <div class="form-group">
+        <label for="onboarding-tools">Tools you already know (comma-separated, optional)</label>
+        <input type="text" id="onboarding-tools" placeholder="Python, Git">
+      </div>
+      <button type="submit" class="auth-button" id="onboarding-submit">Build my roadmap</button>
+    </form>
+  </div>
+</div>
+
+<canvas class="bg-particles" id="particle-canvas"></canvas>
+
+<nav>
+  <div class="brand">Learn<span>Ascent</span></div>
+  <div class="links">
+    <a href="#hero">Learner DNA</a>
+    <a href="#mountain">Mountain journey</a>
+    <a href="#adapt">Live adaptation</a>
+  </div>
+  <div id="nav-user" class="nav-user" style="display:none;">
+    <span id="nav-email"></span>
+    <button class="nav-logout" id="nav-logout-btn">Logout</button>
+  </div>
+</nav>
+
+<section id="hero">
+  <div id="dna-canvas-wrap"><canvas id="dna-canvas"></canvas></div>
+  <div class="hero-copy">
+    <div class="eyebrow">Learner DNA — <span id="hero-career">Data Scientists</span></div>
+    <h1>You are <em>becoming</em> what you're learning.</h1>
+    <p>Every skill you close, every project you ship, lights another thread. This is a working slice of the real pipeline — O*NET data, a live skill graph, an adaptive roadmap — not a mockup.</p>
+  </div>
+  <div class="mission-card">
+    <div class="dot"></div>
+    <div class="body">
+      <div class="label">Today's mission</div>
+      <div class="title" id="mission-text">Loading roadmap…</div>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat"><div class="num" id="stat-readiness">0</div><div class="lbl">Career readiness</div></div>
+    <div class="stat"><div class="num" id="stat-weeks">0</div><div class="lbl">Weeks on ridge</div></div>
+    <div class="stat"><div class="num" id="stat-topics">0</div><div class="lbl">Active topics</div></div>
+  </div>
+</section>
+
+<section id="mountain">
+  <div class="section-head">
+    <div class="eyebrow">Mountain journey</div>
+    <h2>Two paths, climbed in parallel</h2>
+    <p>The gold ridge is your technical climb toward Data Scientist — tools, code, domain knowledge. The teal trail below is the professional track running alongside it. Hover a marker for detail; the route below is live, generated from your actual skill gaps.</p>
+  </div>
+  <div class="legend">
+    <div class="item"><span class="sw" style="background:var(--gold)"></span>Technical ridge</div>
+    <div class="item"><span class="sw" style="background:var(--teal)"></span>Professional trail</div>
+    <div class="item"><span class="sw" style="background:var(--coral)"></span>Recovery route</div>
+    <div class="item"><span class="sw" style="background:#3a3730; border:1px solid #55524a"></span>Campsite</div>
+  </div>
+  <div id="mountain-svg-wrap">
+    <svg id="mountain-svg" viewBox="0 0 1000 460"></svg>
+    <div class="node-tooltip" id="tooltip"></div>
+  </div>
+</section>
+
+<section id="adapt">
+  <div class="section-head">
+    <div class="eyebrow">Live roadmap adaptation</div>
+    <h2>Watch the ridge re-route</h2>
+    <p>This assessment result is real output from the adaptive engine — not staged. Run it and watch the technical ridge insert a recovery route, live, while the DNA reacts.</p>
+  </div>
+  <div class="assessment-card">
+    <div class="row">
+      <div class="skill">Computers and Electronics</div>
+      <div class="score">52<span style="font-size:13px;color:var(--text-mute)">/100</span></div>
+    </div>
+    <div class="note">Weak concepts flagged: REST APIs, databases. The engine checks the skill graph for unmet prerequisites before deciding how to respond.</div>
+    <button id="simulate-btn">Run assessment result →</button>
+  </div>
+  <div class="route-diff" id="route-diff">
+    <div class="msg" id="route-msg"></div>
+    <div class="steps" id="route-steps"></div>
+  </div>
+</section>
+
+<div id="mentor" title="Ask the mentor">
+  <svg viewBox="0 0 64 64">
+    <ellipse cx="32" cy="38" rx="19" ry="16" fill="var(--panel)" stroke="var(--gold-dim)" stroke-width="1"/>
+    <ellipse cx="32" cy="20" rx="14" ry="11" fill="var(--panel)" stroke="var(--gold-dim)" stroke-width="1"/>
+    <circle cx="26" cy="19" r="3" fill="var(--gold)"><animate attributeName="opacity" values="1;0.4;1" dur="2.4s" repeatCount="indefinite"/></circle>
+    <circle cx="38" cy="19" r="3" fill="var(--gold)"><animate attributeName="opacity" values="1;0.4;1" dur="2.4s" begin="0.3s" repeatCount="indefinite"/></circle>
+    <line x1="18" y1="30" x2="10" y2="26" stroke="var(--gold-dim)" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="46" y1="30" x2="54" y2="26" stroke="var(--gold-dim)" stroke-width="1.5" stroke-linecap="round"/>
+    <rect x="24" y="47" width="16" height="4" rx="2" fill="var(--gold)" opacity="0.5"/>
+  </svg>
+</div>
+<div id="mentor-panel">
+  <div class="who">Mentor</div>
+  <div id="mentor-text">Hi — I'm keeping an eye on your roadmap. Run the assessment below and I'll explain what changes and why.</div>
+</div>
+
+<footer>LearnAscent AI — connected prototype slice. Data from real O*NET ingestion + deterministic engines (Phases 1–4). Not a final product.</footer>
+
+<script src="vendor/three.min.js"></script>
+<script src="auth.js"></script>
+<script src="learner.js"></script>
+<script src="demo_data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

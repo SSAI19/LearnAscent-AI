@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LearnAscent AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#08070a; --void-2:#0d0c10; --panel:#121116;
+    --gold:#d9a94e; --gold-dim:#4a3a1c; --gold-glow:rgba(217,169,78,0.35);
+    --teal:#4fb89c; --teal-dim:#1c3a34;
+    --coral:#e2665a; --coral-dim:#3a1f1c;
+    --text:#ede7da; --text-mute:#8a8578; --text-faint:#54524a;
+    --line:#221f24;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--void); color:var(--text);
+    font-family:'Inter',sans-serif; font-weight:400;
+    overflow-x:hidden; min-height:100vh;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif; font-weight:500; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--text-mute);
+  }
+  a{color:inherit;}
+  button{font-family:inherit;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; backdrop-filter:blur(10px);
+    background:linear-gradient(to bottom, rgba(8,7,10,0.92), rgba(8,7,10,0.75));
+    border-bottom:0.5px solid var(--line);
+  }
+  nav .brand{font-family:'Fraunces',serif; font-size:17px; font-weight:600; letter-spacing:0.01em; cursor:pointer;}
+  nav .brand span{color:var(--gold);}
+  .page-nav{display:flex; gap:6px; font-size:13px; align-items:center;}
+  .page-nav a{
+    color:var(--text-mute); text-decoration:none; padding:8px 14px; border-radius:8px;
+    transition:color .2s, background .2s; position:relative;
+  }
+  .page-nav a:hover{color:var(--text);}
+  .page-nav a.active{color:var(--gold); background:rgba(217,169,78,0.08);}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+
+  /* language selector */
+  .lang-switch{position:relative;}
+  .lang-btn{
+    background:var(--panel); border:0.5px solid var(--line); border-radius:8px;
+    color:var(--text-mute); font-size:12px; padding:7px 11px; cursor:pointer;
+    display:flex; align-items:center; gap:6px;
+  }
+  .lang-btn:hover{color:var(--text); border-color:var(--gold-dim);}
+  .lang-menu{
+    position:absolute; top:calc(100% + 6px); right:0; background:var(--panel);
+    border:0.5px solid var(--line); border-radius:10px; padding:6px; min-width:130px;
+    box-shadow:0 16px 40px rgba(0,0,0,0.5); display:none; flex-direction:column; gap:2px;
+  }
+  .lang-switch.open .lang-menu{display:flex;}
+  .lang-option{
+    background:none; border:none; color:var(--text-mute); text-align:left; padding:8px 10px;
+    border-radius:6px; cursor:pointer; font-size:13px;
+  }
+  .lang-option:hover{background:rgba(217,169,78,0.08); color:var(--text);}
+  .lang-option.active{color:var(--gold);}
+
+  .nav-user{display:flex; gap:14px; align-items:center; font-size:13px;}
+  .nav-user span{color:var(--text-mute);}
+  .nav-logout{background:none; border:none; color:var(--gold); cursor:pointer; font-weight:500; text-decoration:underline; padding:0;}
+  .nav-logout:hover{color:var(--gold-glow);}
+  .nav-cta{
+    background:linear-gradient(180deg, rgba(217,169,78,0.2), rgba(217,169,78,0.08));
+    border:0.5px solid var(--gold-dim); border-radius:8px; padding:8px 16px;
+    color:var(--gold); font-size:13px; font-weight:500; cursor:pointer;
+  }
+  .nav-cta:hover{border-color:var(--gold);}
+
+  /* ---------- VIEWS ---------- */
+  .view{display:none; padding-top:88px; min-height:100vh;}
+  .view.view-active{display:block; animation:viewIn .5s ease both;}
+  @keyframes viewIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+  .view-inner{max-width:1080px; margin:0 auto; padding:0 24px 100px;}
+  .view-back{
+    display:inline-block; font-size:12px; color:var(--text-mute); text-decoration:none;
+    margin-bottom:22px; letter-spacing:.03em;
+  }
+  .view-back:hover{color:var(--gold);}
+
+  /* ---------- HOME ---------- */
+  #view-home .hero{
+    min-height:calc(100vh - 88px); display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:20px 24px 60px; max-width:720px; margin:0 auto;
+  }
+  #view-home h1{font-size:clamp(32px,5vw,54px); line-height:1.08; margin:0 auto 16px;}
+  #view-home h1 em{font-style:italic; color:var(--gold);}
+  #view-home .hero p.sub{color:var(--text-mute); font-size:16px; max-width:480px; margin:0 auto; line-height:1.6;}
+  .hero-ctas{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; justify-content:center;}
+  .btn{
+    border-radius:9px; padding:13px 22px; font-size:14px; font-weight:500; cursor:pointer;
+    border:0.5px solid var(--gold-dim); background:linear-gradient(180deg, rgba(217,169,78,0.18), rgba(217,169,78,0.06));
+    color:var(--gold); transition:all .2s;
+  }
+  .btn:hover{border-color:var(--gold); background:rgba(217,169,78,0.22);}
+  .btn.ghost{background:transparent; color:var(--text-mute); border-color:var(--line);}
+  .btn.ghost:hover{color:var(--text); border-color:var(--text-mute);}
+
+  .demo-section{max-width:900px; margin:20px auto 0; padding:70px 24px 0; text-align:center;}
+  .demo-badge{
+    display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace;
+    font-size:10px; letter-spacing:.12em; color:var(--coral); border:0.5px solid rgba(226,102,90,0.4);
+    background:var(--coral-dim); padding:4px 10px; border-radius:999px; margin-bottom:14px;
+  }
+  .demo-badge::before{content:''; width:6px; height:6px; border-radius:50%; background:var(--coral);}
+  .demo-section h2{font-size:clamp(22px,3vw,30px); margin:6px 0 10px;}
+  .demo-section p{color:var(--text-mute); max-width:520px; margin:0 auto 30px; font-size:14px; line-height:1.6;}
+  .demo-mountain-wrap{position:relative; width:100%; max-width:900px; margin:0 auto;}
+
+  .assessment-card{
+    max-width:440px; margin:32px auto 0; background:var(--panel); border:0.5px solid var(--line);
+    border-radius:14px; padding:24px 26px; text-align:left;
+  }
+  .assessment-card .row{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;}
+  .assessment-card .skill{font-family:'Fraunces',serif; font-size:18px;}
+  .assessment-card .score{font-family:'JetBrains Mono',monospace; font-size:20px; color:var(--coral);}
+  .assessment-card .note{font-size:13px; color:var(--text-mute); line-height:1.6; margin:8px 0 18px;}
+  #simulate-btn{
+    width:100%; padding:12px; border-radius:9px; border:0.5px solid var(--gold-dim);
+    background:linear-gradient(180deg, rgba(217,169,78,0.14), rgba(217,169,78,0.05));
+    color:var(--gold); font-weight:500; font-size:14px; cursor:pointer; transition:all .25s;
+  }
+  #simulate-btn:hover{border-color:var(--gold); background:rgba(217,169,78,0.2);}
+  #simulate-btn:disabled{opacity:.4; cursor:default;}
+  .route-diff{max-width:600px; margin:28px auto 0; text-align:left; opacity:0; max-height:0; overflow:hidden; transition:opacity .5s ease, max-height .6s ease;}
+  .route-diff.show{opacity:1; max-height:900px;}
+  .route-diff .msg{font-size:13px; color:var(--coral); background:var(--coral-dim); border-radius:9px; padding:11px 15px; margin-bottom:16px; border:0.5px solid rgba(226,102,90,0.3);}
+  .route-diff .steps{display:flex; flex-direction:column; gap:8px;}
+  .step-row{display:flex; align-items:center; gap:12px; padding:10px 14px; border-radius:8px; background:rgba(217,169,78,0.06); border:0.5px solid var(--gold-dim); font-size:13px; opacity:0; transform:translateX(-8px); animation:stepIn .4s ease forwards;}
+  .step-row .idx{font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:11px; width:16px;}
+  .step-row .lbl{flex:1;}
+  .step-row .hrs{color:var(--text-mute); font-family:'JetBrains Mono',monospace; font-size:11px;}
+  @keyframes stepIn{to{opacity:1; transform:translateX(0);}}
+
+  /* ---------- DASHBOARD ---------- */
+  #view-dashboard .dash-head{margin-bottom:36px;}
+  #view-dashboard .dash-head h1{font-size:clamp(24px,3.2vw,34px); margin:8px 0;}
+  .stat-row{display:flex; gap:20px; flex-wrap:wrap; margin-bottom:36px;}
+  .stat-card{
+    flex:1; min-width:140px; background:var(--panel); border:0.5px solid var(--line);
+    border-radius:14px; padding:20px 22px;
+  }
+  .stat-card .num{font-family:'Fraunces',serif; font-size:32px; color:var(--gold);}
+  .stat-card .lbl{font-size:11px; color:var(--text-mute); text-transform:uppercase; letter-spacing:.08em; margin-top:6px;}
+
+  .assessment-banner{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    background:var(--coral-dim); border:0.5px solid rgba(226,102,90,0.35); border-radius:14px;
+    padding:18px 22px; margin-bottom:28px;
+  }
+  .assessment-banner .label{font-size:11px; color:var(--coral); text-transform:uppercase; letter-spacing:.1em; margin-bottom:4px;}
+  .assessment-banner .title{font-size:14px; color:var(--text); max-width:520px;}
+  .assessment-banner .btn{flex-shrink:0;}
+
+  /* ---------- ASSESSMENT PAGE ---------- */
+  #view-assessment .assessment-head{text-align:center; margin-bottom:8px;}
+  #view-assessment .assessment-head h1{font-size:clamp(24px,3.2vw,34px); margin:8px 0 6px;}
+  #view-assessment .assessment-head p{color:var(--text-mute); max-width:560px; margin:0 auto; font-size:14px; line-height:1.6;}
+  #assessment-loading, #assessment-empty{text-align:center; color:var(--text-mute); font-size:14px; padding:60px 20px;}
+  #assessment-error{display:none; max-width:600px; margin:20px auto 0; font-size:13px; color:var(--coral); background:var(--coral-dim); border-radius:9px; padding:11px 15px; border:0.5px solid rgba(226,102,90,0.3);}
+  #assessment-list{display:none; flex-direction:column; gap:16px; margin:30px 0;}
+  .aq-card{background:var(--panel); border:0.5px solid var(--line); border-radius:14px; padding:20px 24px;}
+  .aq-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:8px;}
+  .aq-skill{font-family:'Fraunces',serif; font-size:18px;}
+  .aq-score{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gold); text-transform:uppercase; letter-spacing:.06em;}
+  .aq-why{font-size:13px; color:var(--text-mute); line-height:1.6; margin-bottom:18px;}
+  .aq-slider{width:100%; accent-color:var(--gold); cursor:pointer;}
+  .aq-scale{display:flex; justify-content:space-between; font-size:11px; color:var(--text-faint); margin-top:6px;}
+  #assessment-form{display:none; text-align:center;}
+  #assessment-submit-btn{min-width:220px;}
+
+  .mission-card{
+    background:rgba(18,17,22,0.7); border:0.5px solid var(--line); border-radius:14px;
+    padding:18px 22px; display:flex; align-items:center; gap:14px; margin-bottom:40px;
+  }
+  .mission-card .dot{width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0; box-shadow:0 0 12px var(--gold-glow); animation:pulseDot 2.4s ease-in-out infinite;}
+  @keyframes pulseDot{0%,100%{opacity:.6;} 50%{opacity:1;}}
+  .mission-card .label{font-size:11px; color:var(--text-mute); text-transform:uppercase; letter-spacing:.1em; margin-bottom:4px;}
+  .mission-card .title{font-size:14px; font-weight:500;}
+
+  .portal-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:20px;}
+  @media (max-width:720px){.portal-grid{grid-template-columns:1fr;}}
+  .portal-card{
+    position:relative; border-radius:18px; padding:34px 28px; text-decoration:none; overflow:hidden;
+    border:0.5px solid var(--line); min-height:180px; display:flex; flex-direction:column; justify-content:flex-end;
+    transition:transform .25s ease, border-color .25s ease;
+  }
+  .portal-card:hover{transform:translateY(-3px); border-color:var(--gold-dim);}
+  .portal-card .eyebrow{margin-bottom:10px;}
+  .portal-card h3{font-size:22px; margin-bottom:6px;}
+  .portal-card p{font-size:13px; color:var(--text-mute);}
+  .portal-card.dna-portal{background:radial-gradient(circle at 80% 20%, rgba(217,169,78,0.16), transparent 60%), var(--panel);}
+  .portal-card.journey-portal{background:radial-gradient(circle at 80% 20%, rgba(79,184,156,0.14), transparent 60%), var(--panel);}
+  .portal-card.resources-portal{background:radial-gradient(circle at 80% 20%, rgba(226,102,90,0.14), transparent 60%), var(--panel);}
+  #view-recommendations .reco-head{text-align:center; margin-bottom:30px;}
+  #view-recommendations .reco-head h1{font-size:clamp(24px,3.4vw,36px); margin:8px 0 10px;}
+  #view-recommendations .reco-head p{color:var(--text-mute); max-width:560px; margin:0 auto; font-size:14px; line-height:1.6;}
+  .reco-group{margin-bottom:40px;}
+  .reco-group-title{font-family:'Fraunces',serif; font-size:19px; margin-bottom:16px;}
+  .reco-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:16px;}
+  .reco-card{background:var(--panel); border:0.5px solid var(--line); border-radius:14px; padding:18px 20px; display:flex; flex-direction:column; gap:10px;}
+  .reco-card .reco-top,.reco-card .reco-meta{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+  .reco-card .reco-type{font-size:10px; color:var(--gold); border:0.5px solid var(--gold-dim); border-radius:999px; padding:3px 9px;}
+  .reco-card .reco-difficulty,.reco-card .reco-meta,.reco-card .reco-why{font-size:12px; color:var(--text-mute);}
+  .reco-card .reco-why{line-height:1.5; border-left:2px solid var(--gold-dim); padding-left:10px;}
+  .reco-card .reco-link{margin-top:auto; align-self:flex-start; font-size:12px; color:var(--gold); text-decoration:none; border:0.5px solid var(--gold-dim); border-radius:8px; padding:7px 12px;}
+  .reco-card .reco-link.disabled{color:var(--text-faint); border-color:var(--line); cursor:default; pointer-events:none;}
+  .reco-empty,.reco-loading{text-align:center; color:var(--text-mute); font-size:14px; padding:60px 20px;}
+
+  /* ---------- DNA PAGE (landscape) ---------- */
+  #view-dna .dna-head{text-align:center; margin-bottom:8px;}
+  #view-dna .dna-head h1{font-size:clamp(24px,3.4vw,36px); margin:8px 0 6px;}
+  #dna-stage{
+    position:relative; width:100%; aspect-ratio:21/9; min-height:320px; max-height:78vh;
+    background:radial-gradient(ellipse at center, #0c0a0d 0%, #060506 70%);
+    border-radius:20px; overflow:hidden; border:0.5px solid var(--line); margin:26px 0 20px;
+  }
+  #dna-canvas{width:100%; height:100%; display:block; filter: drop-shadow(0 0 26px rgba(217,169,78,0.22)) drop-shadow(0 0 60px rgba(217,169,78,0.10));}
+  .dna-readout{
+    position:absolute; left:26px; bottom:22px; z-index:2;
+  }
+  .dna-readout .val{font-family:'Fraunces',serif; font-size:40px; color:var(--gold); line-height:1;}
+  .dna-readout .val.dormant{color:var(--text-mute); font-size:20px; font-family:'Inter',sans-serif; font-weight:500;}
+  .dna-readout .lbl{font-size:11px; color:var(--text-mute); text-transform:uppercase; letter-spacing:.1em; margin-top:6px;}
+  .dna-note{max-width:560px; margin:0 auto; text-align:center; color:var(--text-mute); font-size:13px; line-height:1.7;}
+
+  /* ---------- MOUNTAIN JOURNEY PAGE ---------- */
+  #view-journey .journey-head{text-align:center; margin-bottom:30px;}
+  #view-journey .journey-head h1{font-size:clamp(24px,3.4vw,36px); margin:8px 0 10px;}
+  #view-journey .journey-head p{color:var(--text-mute); max-width:560px; margin:0 auto; font-size:14px; line-height:1.6;}
+  .legend{display:flex; gap:24px; justify-content:center; margin-bottom:30px; flex-wrap:wrap;}
+  .legend .item{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-mute);}
+  .legend .sw{width:10px; height:10px; border-radius:50%;}
+  #mountain-svg-wrap{position:relative; width:100%; overflow:visible; border-radius:20px; border:0.5px solid var(--line);}
+  #mountain-svg{width:100%; height:auto; display:block; border-radius:20px;}
+  #mountain-svg .peak-label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.08em; fill:var(--text-mute);}
+  #mountain-svg .peak-label-gold{fill:var(--gold); font-size:12px; font-weight:600;}
+  #mountain-svg .here-label{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.1em; fill:var(--gold);}
+  #mountain-svg .pulse-ring{animation:ringPulse 1.8s ease-in-out infinite;}
+  @keyframes ringPulse{0%{opacity:.8; transform-box:fill-box; transform-origin:center; transform:scale(0.9);} 50%{opacity:.15; transform:scale(1.35);} 100%{opacity:.8; transform:scale(0.9);}}
+  .node-tooltip{
+    position:absolute; pointer-events:none; opacity:0; transition:opacity .15s;
+    background:var(--panel); border:0.5px solid var(--line); border-radius:8px;
+    padding:10px 13px; font-size:12px; max-width:230px; z-index:30;
+    box-shadow:0 12px 32px rgba(0,0,0,0.5);
+  }
+  .node-tooltip .t-label{font-weight:500; margin-bottom:3px; color:var(--text);}
+  .node-tooltip .t-track{font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); margin-bottom:5px;}
+  .node-tooltip .t-detail{color:var(--text-mute); font-size:11px; line-height:1.5; margin-bottom:6px;}
+  .node-tooltip .t-status{font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-mute);}
+  .node-tooltip .t-status.status-current{color:var(--gold);}
+  .node-tooltip .t-status.status-completed{color:var(--teal);}
+  .journey-empty{text-align:center; color:var(--text-mute); font-size:14px; padding:60px 20px;}
+
+  /* ---------- DAILY / WEEKLY TASKS (real, persisted completion) ---------- */
+  #journey-tasks{margin-top:44px;}
+  .task-group{margin-bottom:32px;}
+  .task-group-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:14px;}
+  .task-group-head h2{font-family:'Fraunces',serif; font-size:18px; margin:0;}
+  .task-group-head .task-count{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-mute); letter-spacing:.06em;}
+  .task-list{display:flex; flex-direction:column; gap:10px;}
+  .task-card{
+    display:flex; align-items:flex-start; gap:14px; background:var(--panel);
+    border:0.5px solid var(--line); border-radius:12px; padding:14px 18px;
+    transition:opacity .2s, border-color .2s;
+  }
+  .task-card.done{opacity:0.5;}
+  .task-check{
+    flex:0 0 auto; width:22px; height:22px; border-radius:6px; margin-top:2px;
+    border:1.5px solid var(--line); background:transparent; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; padding:0;
+  }
+  .task-check.checked{background:var(--gold); border-color:var(--gold);}
+  .task-check svg{width:13px; height:13px; opacity:0; transition:opacity .15s;}
+  .task-check.checked svg{opacity:1;}
+  .task-body{flex:1 1 auto; min-width:0;}
+  .task-title{font-size:14px; margin-bottom:3px;}
+  .task-card.done .task-title{text-decoration:line-through;}
+  .task-meta{font-size:11px; color:var(--text-mute); display:flex; gap:10px; flex-wrap:wrap; text-transform:uppercase; letter-spacing:.05em;}
+  .task-meta .track-technical{color:var(--gold);}
+  .task-meta .track-professional{color:var(--teal);}
+  .task-detail{font-size:12px; color:var(--text-mute); line-height:1.5; margin-top:6px;}
+  .task-empty{text-align:center; color:var(--text-mute); font-size:13px; padding:20px;}
+
+  /* ---------- MENTOR ROBOT ---------- */
+  #mentor{
+    position:fixed; bottom:28px; right:28px; z-index:60; cursor:pointer;
+    width:56px; height:56px; will-change:transform;
+  }
+  #mentor.idle-float{animation:float 3.6s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translate(0,0) rotate(0deg);} 50%{transform:translate(0,-9px) rotate(0deg);}}
+  #mentor svg{width:100%; height:100%; filter:drop-shadow(0 6px 16px rgba(217,169,78,0.25));}
+  #mentor-panel{
+    position:fixed; bottom:96px; right:28px; z-index:60; width:280px;
+    background:var(--panel); border:0.5px solid var(--line); border-radius:14px;
+    padding:18px 20px; font-size:13px; line-height:1.6; color:var(--text-mute);
+    opacity:0; transform:translateY(10px) scale(.97); pointer-events:none;
+    transition:all .3s ease; box-shadow:0 20px 50px rgba(0,0,0,0.5);
+  }
+  #mentor-panel.open{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
+  #mentor-panel .who{font-family:'Fraunces',serif; color:var(--gold); font-size:14px; margin-bottom:8px;}
+  #mentor-panel{width:360px; height:480px; max-height:calc(100vh - 140px); padding:0; display:flex; flex-direction:column; overflow:hidden;}
+  #mentor-panel .mentor-head{display:flex; align-items:center; justify-content:space-between; padding:16px 18px; border-bottom:0.5px solid var(--line); flex-shrink:0;}
+  #mentor-panel .mentor-head .who{font-size:15px; margin:0;}
+  #mentor-panel .who-sub{font-size:11px; color:var(--text-faint); margin-top:2px;}
+  #mentor-close-btn{background:none; border:none; color:var(--text-mute); cursor:pointer; font-size:18px; padding:4px 6px;}
+  #mentor-messages{flex:1; overflow-y:auto; padding:16px 18px; display:flex; flex-direction:column; gap:12px;}
+  .mentor-msg{max-width:88%; font-size:13px; line-height:1.55; padding:10px 13px; border-radius:12px; white-space:pre-wrap;}
+  .mentor-msg.assistant{align-self:flex-start; background:rgba(217,169,78,0.08); border:0.5px solid var(--gold-dim); color:var(--text); border-bottom-left-radius:4px;}
+  .mentor-msg.user{align-self:flex-end; background:var(--void-2); border:0.5px solid var(--line); color:var(--text); border-bottom-right-radius:4px;}
+  .mentor-msg.typing{color:var(--text-mute); font-style:italic;}
+  .mentor-msg.system-note{align-self:center; color:var(--text-faint); font-size:11px; text-align:center; max-width:100%;}
+  #mentor-suggestions{display:flex; flex-wrap:wrap; gap:6px; padding:0 18px 12px; flex-shrink:0;}
+  .mentor-suggestion{font-size:11px; color:var(--text-mute); background:var(--void-2); border:0.5px solid var(--line); border-radius:999px; padding:6px 11px; cursor:pointer;}
+  #mentor-input-row{display:flex; align-items:flex-end; gap:8px; padding:12px 14px; border-top:0.5px solid var(--line); flex-shrink:0;}
+  #mentor-input{flex:1; resize:none; background:var(--void-2); border:0.5px solid var(--line); border-radius:10px; padding:10px 12px; color:var(--text); font-family:'Inter',sans-serif; font-size:13px; max-height:90px; line-height:1.4;}
+  #mentor-send-btn{flex-shrink:0; width:36px; height:36px; border-radius:9px; border:0.5px solid var(--gold-dim); background:rgba(217,169,78,0.12); color:var(--gold); cursor:pointer;}
+  #mentor-send-btn:disabled{opacity:.4; cursor:not-allowed;}
+  #mentor-signin-note{padding:16px 18px; font-size:13px; color:var(--text-mute); line-height:1.6;}
+
+  footer{text-align:center; padding:50px 24px 70px; color:var(--text-faint); font-size:12px;}
+
+  /* ---------- AUTH / ONBOARDING OVERLAYS ---------- */
+  #auth-overlay, #onboarding-overlay{
+    position:fixed; inset:0; z-index:100; background:var(--void);
+    display:flex; align-items:center; justify-content:center;
+    opacity:1; pointer-events:auto; transition:opacity .3s ease;
+  }
+  #onboarding-overlay{overflow-y:auto; padding:40px 0;}
+  #auth-overlay.hidden, #onboarding-overlay.hidden{opacity:0; pointer-events:none; display:none;}
+  #onboarding-career-results{
+    position:absolute; top:100%; left:0; right:0; z-index:5;
+    background:var(--panel); border:0.5px solid var(--line); border-radius:8px;
+    margin-top:4px; max-height:220px; overflow-y:auto; display:none;
+  }
+  #onboarding-career-results.show{display:block;}
+  #onboarding-career-results .career-option{padding:10px 14px; cursor:pointer; font-size:13px; color:var(--text); border-bottom:0.5px solid var(--line);}
+  #onboarding-career-results .career-option:last-child{border-bottom:none;}
+  #onboarding-career-results .career-option:hover{background:rgba(217,169,78,0.1); color:var(--gold);}
+  #auth-container{width:100%; max-width:420px; padding:40px;}
+  .auth-header{text-align:center; margin-bottom:36px;}
+  .auth-header .brand{font-family:'Fraunces',serif; font-size:24px; font-weight:600; letter-spacing:0.01em; margin-bottom:12px;}
+  .auth-header .brand span{color:var(--gold);}
+  .auth-header p{color:var(--text-mute); font-size:14px; line-height:1.6;}
+  .auth-form{display:flex; flex-direction:column; gap:16px;}
+  .form-group{display:flex; flex-direction:column; gap:8px;}
+  .form-group label{font-size:12px; font-weight:500; color:var(--text-mute); text-transform:uppercase; letter-spacing:.08em;}
+  .form-group input{background:var(--panel); border:0.5px solid var(--line); border-radius:8px; padding:12px 14px; color:var(--text); font-family:'Inter',sans-serif; font-size:14px; transition:border-color .2s;}
+  .form-group textarea{background:var(--panel); border:0.5px solid var(--line); border-radius:8px; padding:12px 14px; color:var(--text); font-family:'Inter',sans-serif; font-size:14px; transition:border-color .2s; resize:vertical;}
+  .form-group textarea:focus{outline:none; border-color:var(--gold);}
+  .form-group input:focus{outline:none; border-color:var(--gold);}
+  .form-group input.error{border-color:var(--coral);}
+  .error-message{font-size:12px; color:var(--coral); margin-top:4px; display:none;}
+  .error-message.show{display:block;}
+  .auth-button{background:linear-gradient(180deg, rgba(217,169,78,0.2), rgba(217,169,78,0.08)); border:0.5px solid var(--gold-dim); border-radius:8px; padding:13px 16px; color:var(--gold); font-weight:500; font-size:14px; cursor:pointer; transition:all .25s;}
+  .auth-button:hover:not(:disabled){background:linear-gradient(180deg, rgba(217,169,78,0.3), rgba(217,169,78,0.15)); border-color:var(--gold);}
+  .auth-button:disabled{opacity:.5; cursor:default;}
+  .auth-toggle{text-align:center; color:var(--text-mute); font-size:13px; margin-top:20px;}
+  .auth-toggle button{background:none; border:none; color:var(--gold); cursor:pointer; font-weight:500; text-decoration:underline; font-size:13px; padding:0;}
+  .auth-toggle button:hover{color:var(--gold-glow);}
+  .auth-close{position:absolute; top:18px; right:18px; background:none; border:none; color:var(--text-mute); font-size:20px; cursor:pointer; line-height:1;}
+  .auth-close:hover{color:var(--text);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Auth overlay -->
+<div id="auth-overlay">
+  <div id="auth-container">
+    <div class="auth-header">
+      <div class="brand">Learn<span>Ascent</span></div>
+      <p>Unlock your personalized learning path powered by O*NET data.</p>
+    </div>
+
+    <form id="login-form" class="auth-form">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" placeholder="your@email.com" required>
+        <div class="error-message" id="login-email-error"></div>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="••••••••" required>
+        <div class="error-message" id="login-password-error"></div>
+      </div>
+      <button type="submit" class="auth-button" id="login-submit">Sign In</button>
+      <div class="auth-toggle">
+        Don't have an account? <button type="button" id="show-signup">Create one</button>
+      </div>
+    </form>
+
+    <form id="signup-form" class="auth-form" style="display:none;">
+      <div class="form-group">
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" placeholder="your@email.com" required>
+        <div class="error-message" id="signup-email-error"></div>
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" placeholder="••••••••" required>
+        <div class="error-message" id="signup-password-error"></div>
+      </div>
+      <div class="form-group">
+        <label for="signup-confirm">Confirm Password</label>
+        <input type="password" id="signup-confirm" placeholder="••••••••" required>
+        <div class="error-message" id="signup-confirm-error"></div>
+      </div>
+      <button type="submit" class="auth-button" id="signup-submit">Create Account</button>
+      <div class="auth-toggle">
+        Already have an account? <button type="button" id="show-login">Sign in</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Onboarding overlay: real profile creation only. No fake/demo data is
+     ever assigned automatically to a signed-in user. -->
+<div id="onboarding-overlay" class="hidden">
+  <div id="auth-container">
+    <div class="auth-header">
+      <div class="brand">Learn<span>Ascent</span></div>
+      <p>Tell us where you're headed — this builds your real Learner DNA and roadmap.</p>
+    </div>
+    <form id="onboarding-form" class="auth-form">
+      <div class="form-group">
+        <label for="onboarding-name">Your name</label>
+        <input type="text" id="onboarding-name" placeholder="Jordan" required>
+        <div class="error-message" id="onboarding-name-error"></div>
+      </div>
+      <div class="form-group" style="position:relative;">
+        <label for="onboarding-career">Target career</label>
+        <input type="text" id="onboarding-career" placeholder="Search O*NET occupations…" autocomplete="off" required>
+        <div class="error-message" id="onboarding-career-error"></div>
+        <div id="onboarding-career-results"></div>
+      </div>
+      <div class="form-group">
+        <label for="onboarding-experience">Tell us about your experience so far</label>
+        <textarea id="onboarding-experience" rows="3" placeholder="What have you learned, built, worked on, or practiced in this area?"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="onboarding-minutes">Minutes available per day</label>
+        <input type="number" id="onboarding-minutes" min="10" max="480" value="30" required>
+      </div>
+      <div class="form-group">
+        <label for="onboarding-weeks">Target duration (weeks)</label>
+        <input type="number" id="onboarding-weeks" min="1" max="104" value="12" required>
+      </div>
+      <div class="form-group">
+        <label for="onboarding-tools">Tools you already know (comma-separated, optional)</label>
+        <input type="text" id="onboarding-tools" placeholder="Python, Git">
+      </div>
+      <button type="submit" class="auth-button" id="onboarding-submit">Build my roadmap</button>
+    </form>
+  </div>
+</div>
+
+<nav>
+  <div class="brand" id="brand-home-link">Learn<span>Ascent</span></div>
+  <div class="page-nav" id="page-nav">
+    <a href="#/home" data-route="home" data-i18n="nav.home">Home</a>
+    <a href="#/dashboard" data-route="dashboard" data-i18n="nav.dashboard">Dashboard</a>
+    <a href="#/assessment" data-route="assessment" data-i18n="nav.assessment">Assessment</a>
+    <a href="#/dna" data-route="dna" data-i18n="nav.dna">Learner DNA</a>
+    <a href="#/journey" data-route="journey" data-i18n="nav.journey">Mountain Journey</a>
+    <a href="#/recommendations" data-route="recommendations">Resources</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switch" id="lang-switch">
+      <button class="lang-btn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <span id="lang-btn-label">EN</span> ▾
+      </button>
+      <div class="lang-menu" id="lang-menu">
+        <button class="lang-option" data-lang="en" type="button">English</button>
+        <button class="lang-option" data-lang="ta" type="button">தமிழ்</button>
+        <button class="lang-option" data-lang="hi" type="button">हिन्दी</button>
+      </div>
+    </div>
+    <div id="nav-user" class="nav-user" style="display:none;">
+      <span id="nav-email"></span>
+      <button class="nav-logout" id="nav-logout-btn" data-i18n="nav.logout">Logout</button>
+    </div>
+    <button class="nav-cta" id="nav-signin-btn" style="display:none;" data-i18n="home.cta_login">Sign in</button>
+  </div>
+</nav>
+
+<!-- ============ HOME ============ -->
+<section class="view" id="view-home" data-view="home">
+  <div class="view-inner" style="max-width:1080px;">
+    <div class="hero">
+      <div class="eyebrow" data-i18n="home.eyebrow">LearnAscent AI</div>
+      <h1><span data-i18n="home.title_pre">You are </span><em data-i18n="home.title_em">becoming</em><span data-i18n="home.title_post"> what you're learning.</span></h1>
+      <p class="sub" data-i18n="home.sub">A personalized learning path powered by real O*NET data, a live skill graph, and an adaptive roadmap engine.</p>
+      <div class="hero-ctas">
+        <button class="btn" id="hero-cta-primary" data-i18n="home.cta_start">Get started</button>
+        <button class="btn ghost" id="hero-cta-secondary" data-i18n="home.cta_login">Sign in</button>
+      </div>
+    </div>
+
+    <div class="demo-section" id="demo-section">
+      <span class="demo-badge" data-i18n="demo.badge">DEMO MODE</span>
+      <h2>Watch the ridge re-route</h2>
+      <p>This is sample output from the same engine that will build your real roadmap — not your data. Run it to see how an assessment result changes the climb, live.</p>
+
+      <div class="demo-mountain-wrap" id="demo-mountain-wrap" style="position:relative;">
+        <svg id="demo-mountain-svg" viewBox="0 0 1200 420" style="width:100%; height:auto; border-radius:16px; border:0.5px solid var(--line);"></svg>
+        <div class="node-tooltip" id="demo-tooltip"></div>
+      </div>
+
+      <div class="assessment-card">
+        <div class="row">
+          <div class="skill" id="demo-skill-name">—</div>
+          <div class="score" id="demo-skill-score">—<span style="font-size:12px;color:var(--text-mute)">/100</span></div>
+        </div>
+        <div class="note" id="demo-skill-note">The engine checks the skill graph for unmet prerequisites before deciding how to respond.</div>
+        <button id="simulate-btn">Run assessment result →</button>
+      </div>
+      <div class="route-diff" id="route-diff">
+        <div class="msg" id="route-msg"></div>
+        <div class="steps" id="route-steps"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DASHBOARD ============ -->
+<section class="view" id="view-dashboard" data-view="dashboard">
+  <div class="view-inner">
+    <div class="dash-head">
+      <div class="eyebrow" data-i18n="dash.eyebrow">Dashboard</div>
+      <h1 data-i18n="dash.title">Your progress at a glance</h1>
+    </div>
+
+    <div class="assessment-banner" id="assessment-banner" style="display:none;">
+      <div class="body">
+        <div class="label" data-i18n="dash.assessment_cta_label">Next step</div>
+        <div class="title" id="assessment-banner-title" data-i18n="dash.assessment_cta_title">Assessment not completed — your readiness, roadmap and DNA are waiting on it.</div>
+      </div>
+      <button class="btn" id="assessment-banner-btn" data-i18n="dash.assessment_cta_btn">Start assessment</button>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="num" id="stat-readiness">—</div><div class="lbl" data-i18n="dash.readiness">Career readiness</div></div>
+      <div class="stat-card"><div class="num" id="stat-weeks">—</div><div class="lbl" data-i18n="dash.weeks">Weeks planned</div></div>
+      <div class="stat-card"><div class="num" id="stat-topics">—</div><div class="lbl" data-i18n="dash.topics">Active topics</div></div>
+    </div>
+
+    <div class="mission-card">
+      <div class="dot"></div>
+      <div class="body">
+        <div class="label" data-i18n="dash.mission">Today's mission</div>
+        <div class="title" id="mission-text" data-i18n="dash.mission_loading">Loading roadmap…</div>
+      </div>
+    </div>
+
+    <div class="portal-grid">
+      <a class="portal-card dna-portal" href="#/dna">
+        <div class="eyebrow" style="color:var(--gold)">◆</div>
+        <h3 data-i18n="dash.enter_dna">Enter Learner DNA</h3>
+        <p data-i18n="dash.enter_dna_sub">Your living skill identity, visualized.</p>
+      </a>
+      <a class="portal-card journey-portal" href="#/journey">
+        <div class="eyebrow" style="color:var(--teal)">▲</div>
+        <h3 data-i18n="dash.enter_journey">Enter Mountain Journey</h3>
+        <p data-i18n="dash.enter_journey_sub">See exactly where you stand on the path.</p>
+      </a>
+      <a class="portal-card resources-portal" href="#/recommendations">
+        <div class="eyebrow" style="color:var(--coral)">★</div>
+        <h3>Smart Resources</h3>
+        <p>Courses, videos and projects picked for your real skill gaps.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ASSESSMENT ============ -->
+<section class="view" id="view-assessment" data-view="assessment">
+  <div class="view-inner">
+    <a class="view-back" href="#/dashboard" data-i18n="assessment.back">← Back to dashboard</a>
+    <div class="assessment-head">
+      <div class="eyebrow" data-i18n="assessment.eyebrow">Assessment</div>
+      <h1 data-i18n="assessment.title">Rate your real skill level</h1>
+      <p data-i18n="assessment.sub">These questions are built from the actual O*NET requirements for your target career. Answer honestly — your roadmap, readiness and Learner DNA are calculated from this.</p>
+    </div>
+
+    <div id="assessment-loading" data-i18n="assessment.loading">Loading your assessment…</div>
+    <div id="assessment-empty" style="display:none;" data-i18n="assessment.empty">No assessment items are available for this career yet.</div>
+    <div id="assessment-error"></div>
+    <div id="assessment-list"></div>
+    <div id="assessment-form">
+      <button class="btn" id="assessment-submit-btn" data-i18n="assessment.submit_btn">Submit assessment</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEARNER DNA (landscape, dedicated) ============ -->
+<section class="view" id="view-dna" data-view="dna">
+  <div class="view-inner" style="max-width:1200px;">
+    <a class="view-back" href="#/dashboard" data-i18n="dna.back">← Back to dashboard</a>
+    <div class="dna-head">
+      <div class="eyebrow" data-i18n="dna.eyebrow">Learner DNA</div>
+      <h1 data-i18n="dna.title">Your living digital identity</h1>
+    </div>
+
+    <div id="dna-stage">
+      <canvas id="dna-canvas"></canvas>
+      <div class="dna-readout">
+        <div class="val" id="dna-readout-val">—</div>
+        <div class="lbl" id="dna-readout-lbl" data-i18n="dna.readiness_label">Career readiness</div>
+      </div>
+    </div>
+    <p class="dna-note" id="dna-note" data-i18n="dna.dormant_note">Your DNA is dormant until your first assessment. No progress is invented — every strand you see is earned.</p>
+  </div>
+</section>
+
+<!-- ============ MOUNTAIN JOURNEY (dedicated) ============ -->
+<section class="view" id="view-journey" data-view="journey">
+  <div class="view-inner" style="max-width:1200px;">
+    <a class="view-back" href="#/dashboard" data-i18n="journey.back">← Back to dashboard</a>
+    <div class="journey-head">
+      <div class="eyebrow" data-i18n="journey.eyebrow">Mountain Journey</div>
+      <h1 data-i18n="journey.title">Your path to the summit</h1>
+      <p data-i18n="journey.sub">One journey, two tracks. Hover a marker for detail.</p>
+    </div>
+    <div class="legend">
+      <div class="item"><span class="sw" style="background:var(--gold)"></span><span data-i18n="journey.legend_technical">Technical track</span></div>
+      <div class="item"><span class="sw" style="background:var(--teal)"></span><span data-i18n="journey.legend_professional">Professional track</span></div>
+    </div>
+    <div id="mountain-svg-wrap">
+      <svg id="mountain-svg" viewBox="0 0 1200 560"></svg>
+      <div class="node-tooltip" id="tooltip"></div>
+      <div class="journey-empty" id="journey-empty" data-i18n="journey.empty" style="display:none;">Your roadmap will appear here once your profile is built.</div>
+    </div>
+
+    <div id="journey-tasks" style="display:none;">
+      <div class="task-group">
+        <div class="task-group-head">
+          <h2 data-i18n="tasks.today_title">Today's tasks</h2>
+          <span class="task-count" id="tasks-today-count"></span>
+        </div>
+        <div class="task-list" id="tasks-today-list"></div>
+        <div class="task-empty" id="tasks-today-empty" style="display:none;" data-i18n="tasks.today_empty">Nothing left for today — check back tomorrow.</div>
+      </div>
+      <div class="task-group">
+        <div class="task-group-head">
+          <h2 data-i18n="tasks.week_title">This week</h2>
+          <span class="task-count" id="tasks-week-count"></span>
+        </div>
+        <div class="task-list" id="tasks-week-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="view-recommendations" data-view="recommendations">
+  <div class="view-inner" style="max-width:1200px;">
+    <a class="view-back" href="#/dashboard">← Back to dashboard</a>
+    <div class="reco-head"><div class="eyebrow">Smart Resources</div><h1 id="reco-title">Resources picked for your path</h1><p>Ranked from your real skill gaps, experience level and available time — not a generic list.</p></div>
+    <div id="reco-loading" class="reco-loading">Loading your recommendations…</div>
+    <div id="reco-empty" class="reco-empty" style="display:none;">Set a target career and complete your profile to unlock personalized resource recommendations.</div>
+    <div id="reco-content" style="display:none;">
+      <div class="reco-group"><div class="reco-group-title">Recommended For You</div><div class="reco-grid" id="reco-grid-featured"></div></div>
+      <div class="reco-group"><div class="reco-group-title">Courses</div><div class="reco-grid" id="reco-grid-courses"></div></div>
+      <div class="reco-group"><div class="reco-group-title">Videos</div><div class="reco-grid" id="reco-grid-videos"></div></div>
+      <div class="reco-group"><div class="reco-group-title">Projects</div><div class="reco-grid" id="reco-grid-projects"></div></div>
+      <div class="reco-group"><div class="reco-group-title">Free Resources</div><div class="reco-grid" id="reco-grid-free"></div></div>
+    </div>
+  </div>
+</section>
+
+<div id="mentor" class="idle-float" title="Ask the mentor">
+  <svg viewBox="0 0 64 64">
+    <ellipse cx="32" cy="38" rx="19" ry="16" fill="var(--panel)" stroke="var(--gold-dim)" stroke-width="1"/>
+    <ellipse cx="32" cy="20" rx="14" ry="11" fill="var(--panel)" stroke="var(--gold-dim)" stroke-width="1"/>
+    <circle cx="26" cy="19" r="3" fill="var(--gold)"><animate attributeName="opacity" values="1;0.4;1" dur="2.4s" repeatCount="indefinite"/></circle>
+    <circle cx="38" cy="19" r="3" fill="var(--gold)"><animate attributeName="opacity" values="1;0.4;1" dur="2.4s" begin="0.3s" repeatCount="indefinite"/></circle>
+    <line x1="18" y1="30" x2="10" y2="26" stroke="var(--gold-dim)" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="46" y1="30" x2="54" y2="26" stroke="var(--gold-dim)" stroke-width="1.5" stroke-linecap="round"/>
+    <rect x="24" y="47" width="16" height="4" rx="2" fill="var(--gold)" opacity="0.5"/>
+  </svg>
+</div>
+<div id="mentor-panel">
+  <div class="mentor-head"><div><div class="who" data-i18n="mentor.who">Mentor</div><div class="who-sub">Your AI learner assistant</div></div><button id="mentor-close-btn" type="button" aria-label="Close chat">×</button></div>
+  <div id="mentor-messages"></div>
+  <div id="mentor-suggestions"></div>
+  <div id="mentor-signin-note" style="display:none;">Sign in and set a target career to chat with your AI learner assistant.</div>
+  <div id="mentor-input-row"><textarea id="mentor-input" rows="1" placeholder="Ask about your progress, skills, or resources…"></textarea><button id="mentor-send-btn" type="button" aria-label="Send">Send</button></div>
+</div>
+
+<footer>LearnAscent AI — connected prototype slice. Data from real O*NET ingestion + deterministic engines. Not a final product.</footer>
+
+<script src="vendor/three.min.js"></script>
+<script src="i18n.js"></script>
+<script src="router.js"></script>
+<script src="auth.js"></script>
+<script src="learner.js"></script>
+<script src="assessment.js"></script>
+<script src="tasks.js"></script>
+<script src="recommendations.js"></script>
+<script src="demo_data.js"></script>
+<script src="dna.js"></script>
+<script src="mountain.js"></script>
+<script src="mentor_chat.js"></script>
+<script src="mentor.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

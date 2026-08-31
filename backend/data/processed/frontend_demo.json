@@ -1,0 +1,1189 @@
+{
+  "learner": {
+    "user_id": "demo-learner-1",
+    "target_career_title": "Data Scientists",
+    "target_career_code": "15-2051.00",
+    "experience_level": "beginner",
+    "known_tools": [
+      "Python"
+    ],
+    "available_minutes_per_day": 30,
+    "target_duration_weeks": 12
+  },
+  "occupation": {
+    "code": "15-2051.00",
+    "title": "Data Scientists",
+    "job_zone": {
+      "zone": 4,
+      "name": "Job Zone Four: Considerable Preparation Needed",
+      "experience": "A considerable amount of work-related skill, knowledge, or experience is needed for these occupations. For example, an accountant must complete four years of college and work for several years in accounting to be considered qualified.",
+      "education": "Most of these occupations require a four-year bachelor's degree, but some do not.",
+      "job_training": "Employees in these occupations usually need several years of work-related experience, on-the-job training, and/or vocational training.",
+      "examples": "Many of these occupations involve coordinating, supervising, managing, or training others. Examples include real estate brokers, sales managers, database administrators, graphic designers, conservation scientists, art directors, and cost estimators.",
+      "svp_range": "(7.0 to < 8.0)"
+    }
+  },
+  "skill_gap_summary": {
+    "total_skills": 10,
+    "counts": {
+      "mastered": 0,
+      "strong": 0,
+      "developing": 2,
+      "missing": 8
+    },
+    "coverage_pct": 0.0,
+    "high_priority_skills": [
+      "Reading Comprehension",
+      "Active Learning",
+      "Writing",
+      "Speaking",
+      "Active Listening",
+      "Mathematics",
+      "Critical Thinking"
+    ]
+  },
+  "readiness_before": {
+    "readiness_score": 0.0,
+    "breakdown": [
+      {
+        "component": "skill_coverage",
+        "weight": 0.4,
+        "raw_score_0_100": 0.0,
+        "weighted_contribution": 0.0,
+        "note": "Importance-weighted share of required skills at Strong/Mastered level."
+      },
+      {
+        "component": "assessment_performance",
+        "weight": 0.25,
+        "raw_score_0_100": 0.0,
+        "weighted_contribution": 0.0,
+        "note": "No assessments taken yet."
+      },
+      {
+        "component": "project_evidence",
+        "weight": 0.2,
+        "raw_score_0_100": 0.0,
+        "weighted_contribution": 0.0,
+        "note": "No reviewed projects yet."
+      },
+      {
+        "component": "milestones",
+        "weight": 0.15,
+        "raw_score_0_100": 0.0,
+        "weighted_contribution": 0.0,
+        "note": "Roadmap not generated yet."
+      }
+    ],
+    "missing_evidence": [
+      "No assessments completed \u2014 take one to verify skill levels.",
+      "No reviewed projects \u2014 submit a project for skill verification.",
+      "No roadmap generated yet."
+    ],
+    "next_action": "Focus next on 'Reading Comprehension' \u2014 high-priority gap for this career.",
+    "disclaimer": "This score reflects progress on this platform's roadmap and assessments. It is an application-generated estimate, not a guarantee of employability or hiring outcomes."
+  },
+  "readiness_after": {
+    "readiness_score": 13.0,
+    "breakdown": [
+      {
+        "component": "skill_coverage",
+        "weight": 0.4,
+        "raw_score_0_100": 0.0,
+        "weighted_contribution": 0.0,
+        "note": "Importance-weighted share of required skills at Strong/Mastered level."
+      },
+      {
+        "component": "assessment_performance",
+        "weight": 0.25,
+        "raw_score_0_100": 52.0,
+        "weighted_contribution": 13.0,
+        "note": "Average of 1 assessment(s)."
+      },
+      {
+        "component": "project_evidence",
+        "weight": 0.2,
+        "raw_score_0_100": 0.0,
+        "weighted_contribution": 0.0,
+        "note": "No reviewed projects yet."
+      },
+      {
+        "component": "milestones",
+        "weight": 0.15,
+        "raw_score_0_100": 0.0,
+        "weighted_contribution": 0.0,
+        "note": "Roadmap not generated yet."
+      }
+    ],
+    "missing_evidence": [
+      "No reviewed projects \u2014 submit a project for skill verification.",
+      "No roadmap generated yet."
+    ],
+    "next_action": "Focus next on 'Reading Comprehension' \u2014 high-priority gap for this career.",
+    "disclaimer": "This score reflects progress on this platform's roadmap and assessments. It is an application-generated estimate, not a guarantee of employability or hiring outcomes."
+  },
+  "roadmap_before": {
+    "target_career_title": "Data Scientists",
+    "weeks_planned": 20,
+    "total_topics": 28,
+    "total_estimated_hours": 239.0,
+    "fits_target_duration": false,
+    "overflow_weeks": 8,
+    "technical": {
+      "track": "technical",
+      "weeks_planned": 8,
+      "total_hours": 120.9,
+      "weekly_hour_budget": 2.4,
+      "milestones": [
+        {
+          "week_number": 1,
+          "is_campsite": false,
+          "total_hours": 23.4,
+          "topics": [
+            {
+              "id": "knowledge:2.C.3.a",
+              "label": "Computers and Electronics",
+              "topic_type": "onet_knowledge",
+              "track": "technical",
+              "estimated_hours": 23.4,
+              "high_priority": true,
+              "detail": "Computers and Electronics is one of the most important skills for this career (importance 4.2/5), typically needed at a proficiency level of 5.8/7."
+            }
+          ]
+        },
+        {
+          "week_number": 2,
+          "is_campsite": false,
+          "total_hours": 7.5,
+          "topics": [
+            {
+              "id": "transferable_skills:2.B.3.e",
+              "label": "Programming",
+              "topic_type": "onet_transferable",
+              "track": "technical",
+              "estimated_hours": 7.5,
+              "high_priority": true,
+              "detail": "Programming is an important skill for this career (importance 3.8/5), typically needed at a proficiency level of 3.9/7."
+            }
+          ]
+        },
+        {
+          "week_number": 3,
+          "is_campsite": false,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:Amazon Web Services AWS software",
+              "label": "Amazon Web Services AWS software",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: Data base user interface and query software."
+            }
+          ]
+        },
+        {
+          "week_number": 4,
+          "is_campsite": true,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:Apache Hadoop",
+              "label": "Apache Hadoop",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: Data base management system software."
+            }
+          ]
+        },
+        {
+          "week_number": 5,
+          "is_campsite": false,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:Apache Spark",
+              "label": "Apache Spark",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: Business intelligence and data analysis software."
+            }
+          ]
+        },
+        {
+          "week_number": 6,
+          "is_campsite": false,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:C++",
+              "label": "C++",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: Object or component oriented development software."
+            }
+          ]
+        },
+        {
+          "week_number": 7,
+          "is_campsite": false,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:Git",
+              "label": "Git",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: File versioning software."
+            }
+          ]
+        },
+        {
+          "week_number": 8,
+          "is_campsite": true,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:Microsoft Azure software",
+              "label": "Microsoft Azure software",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: Development environment software."
+            }
+          ]
+        }
+      ]
+    },
+    "professional": {
+      "track": "professional",
+      "weeks_planned": 20,
+      "total_hours": 118.1,
+      "weekly_hour_budget": 1.1,
+      "milestones": [
+        {
+          "week_number": 1,
+          "is_campsite": false,
+          "total_hours": 6.9,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.1.a",
+              "label": "Reading Comprehension",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 6.9,
+              "high_priority": true,
+              "detail": "Reading Comprehension is an important skill for this career (importance 3.9/5), typically needed at a proficiency level of 4.6/7."
+            }
+          ]
+        },
+        {
+          "week_number": 2,
+          "is_campsite": false,
+          "total_hours": 6.6,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.2.b",
+              "label": "Active Learning",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 6.6,
+              "high_priority": true,
+              "detail": "Active Learning is an important skill for this career (importance 3.6/5), typically needed at a proficiency level of 4.4/7."
+            }
+          ]
+        },
+        {
+          "week_number": 3,
+          "is_campsite": false,
+          "total_hours": 6.2,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.1.c",
+              "label": "Writing",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 6.2,
+              "high_priority": true,
+              "detail": "Writing is an important skill for this career (importance 3.5/5), typically needed at a proficiency level of 4.1/7."
+            }
+          ]
+        },
+        {
+          "week_number": 4,
+          "is_campsite": true,
+          "total_hours": 5.6,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.1.d",
+              "label": "Speaking",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 5.6,
+              "high_priority": true,
+              "detail": "Speaking is an important skill for this career (importance 3.6/5), typically needed at a proficiency level of 3.8/7."
+            }
+          ]
+        },
+        {
+          "week_number": 5,
+          "is_campsite": false,
+          "total_hours": 5.6,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.1.b",
+              "label": "Active Listening",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 5.6,
+              "high_priority": true,
+              "detail": "Active Listening is an important skill for this career (importance 3.5/5), typically needed at a proficiency level of 3.8/7."
+            }
+          ]
+        },
+        {
+          "week_number": 6,
+          "is_campsite": false,
+          "total_hours": 3.8,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.1.e",
+              "label": "Mathematics",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 3.8,
+              "high_priority": true,
+              "detail": "Mathematics is one of the most important skills for this career (importance 4.4/5), typically needed at a proficiency level of 5.0/7."
+            }
+          ]
+        },
+        {
+          "week_number": 7,
+          "is_campsite": false,
+          "total_hours": 2.4,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.2.a",
+              "label": "Critical Thinking",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 2.4,
+              "high_priority": true,
+              "detail": "Critical Thinking is one of the most important skills for this career (importance 4.2/5), typically needed at a proficiency level of 4.6/7."
+            }
+          ]
+        },
+        {
+          "week_number": 8,
+          "is_campsite": true,
+          "total_hours": 7.1,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.b.4",
+              "label": "Deductive Reasoning",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 7.1,
+              "high_priority": true,
+              "detail": "Deductive Reasoning is one of the most important skills for this career (importance 4.2/5), typically needed at a proficiency level of 4.8/7."
+            }
+          ]
+        },
+        {
+          "week_number": 9,
+          "is_campsite": false,
+          "total_hours": 7.1,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.b.5",
+              "label": "Inductive Reasoning",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 7.1,
+              "high_priority": true,
+              "detail": "Inductive Reasoning is one of the most important skills for this career (importance 4.2/5), typically needed at a proficiency level of 4.8/7."
+            }
+          ]
+        },
+        {
+          "week_number": 10,
+          "is_campsite": false,
+          "total_hours": 6.9,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.a.1",
+              "label": "Oral Comprehension",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.9,
+              "high_priority": true,
+              "detail": "Oral Comprehension is an important skill for this career (importance 3.8/5), typically needed at a proficiency level of 4.6/7."
+            }
+          ]
+        },
+        {
+          "week_number": 11,
+          "is_campsite": false,
+          "total_hours": 6.8,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.a.2",
+              "label": "Written Comprehension",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.8,
+              "high_priority": true,
+              "detail": "Written Comprehension is one of the most important skills for this career (importance 4.0/5), typically needed at a proficiency level of 4.5/7."
+            }
+          ]
+        },
+        {
+          "week_number": 12,
+          "is_campsite": true,
+          "total_hours": 6.8,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.a.3",
+              "label": "Oral Expression",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.8,
+              "high_priority": true,
+              "detail": "Oral Expression is an important skill for this career (importance 3.6/5), typically needed at a proficiency level of 4.5/7."
+            }
+          ]
+        },
+        {
+          "week_number": 13,
+          "is_campsite": false,
+          "total_hours": 6.6,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.c.1",
+              "label": "Mathematical Reasoning",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.6,
+              "high_priority": true,
+              "detail": "Mathematical Reasoning is one of the most important skills for this career (importance 4.1/5), typically needed at a proficiency level of 4.4/7."
+            }
+          ]
+        },
+        {
+          "week_number": 14,
+          "is_campsite": false,
+          "total_hours": 6.4,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.a.4",
+              "label": "Written Expression",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.4,
+              "high_priority": true,
+              "detail": "Written Expression is an important skill for this career (importance 3.9/5), typically needed at a proficiency level of 4.2/7."
+            }
+          ]
+        },
+        {
+          "week_number": 15,
+          "is_campsite": false,
+          "total_hours": 6.2,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.b.6",
+              "label": "Information Ordering",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.2,
+              "high_priority": true,
+              "detail": "Information Ordering is one of the most important skills for this career (importance 4.1/5), typically needed at a proficiency level of 4.1/7."
+            }
+          ]
+        },
+        {
+          "week_number": 16,
+          "is_campsite": true,
+          "total_hours": 6.2,
+          "topics": [
+            {
+              "id": "transferable_skills:2.B.2.i",
+              "label": "Complex Problem Solving",
+              "topic_type": "onet_transferable",
+              "track": "professional",
+              "estimated_hours": 6.2,
+              "high_priority": true,
+              "detail": "Complex Problem Solving is an important skill for this career (importance 3.8/5), typically needed at a proficiency level of 4.1/7."
+            }
+          ]
+        },
+        {
+          "week_number": 17,
+          "is_campsite": false,
+          "total_hours": 5.4,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.2.d",
+              "label": "Monitoring",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 5.4,
+              "high_priority": false,
+              "detail": "Monitoring is an important skill for this career (importance 3.2/5), typically needed at a proficiency level of 3.6/7."
+            }
+          ]
+        },
+        {
+          "week_number": 18,
+          "is_campsite": false,
+          "total_hours": 5.2,
+          "topics": [
+            {
+              "id": "knowledge:2.C.7.a",
+              "label": "English Language",
+              "topic_type": "onet_knowledge",
+              "track": "professional",
+              "estimated_hours": 5.2,
+              "high_priority": false,
+              "detail": "English Language is an important skill for this career (importance 3.0/5), typically needed at a proficiency level of 3.4/7."
+            }
+          ]
+        },
+        {
+          "week_number": 19,
+          "is_campsite": false,
+          "total_hours": 6.0,
+          "topics": [
+            {
+              "id": "transferable_skills:2.B.4.e",
+              "label": "Judgment and Decision Making",
+              "topic_type": "onet_transferable",
+              "track": "professional",
+              "estimated_hours": 6.0,
+              "high_priority": false,
+              "detail": "Judgment and Decision Making is an important skill for this career (importance 3.4/5), typically needed at a proficiency level of 4.0/7."
+            }
+          ]
+        },
+        {
+          "week_number": 20,
+          "is_campsite": true,
+          "total_hours": 4.3,
+          "topics": [
+            {
+              "id": "transferable_skills:2.B.5.a",
+              "label": "Time Management",
+              "topic_type": "onet_transferable",
+              "track": "professional",
+              "estimated_hours": 4.3,
+              "high_priority": false,
+              "detail": "Time Management is an important skill for this career (importance 3.0/5), typically needed at a proficiency level of 2.9/7."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "roadmap_after": {
+    "target_career_title": "Data Scientists",
+    "weeks_planned": 20,
+    "total_topics": 28,
+    "total_estimated_hours": 252.0,
+    "fits_target_duration": false,
+    "overflow_weeks": 8,
+    "technical": {
+      "track": "technical",
+      "weeks_planned": 12,
+      "total_hours": 133.9,
+      "weekly_hour_budget": 2.4,
+      "milestones": [
+        {
+          "week_number": 1,
+          "is_campsite": false,
+          "total_hours": 5.0,
+          "topics": [
+            {
+              "id": "recovery_prereq:sql:Computers and Electronics",
+              "label": "SQL",
+              "topic_type": "missed_prerequisite",
+              "track": "technical",
+              "estimated_hours": 5.0,
+              "high_priority": true,
+              "detail": "Prerequisite review \u2014 Computers and Electronics depends on SQL, not yet solid."
+            }
+          ]
+        },
+        {
+          "week_number": 2,
+          "is_campsite": false,
+          "total_hours": 3.0,
+          "topics": [
+            {
+              "id": "recovery_revision:Computers and Electronics",
+              "label": "Revision: Computers and Electronics",
+              "topic_type": "revision",
+              "track": "technical",
+              "estimated_hours": 3.0,
+              "high_priority": true,
+              "detail": "Simplified re-explanation focused on: REST APIs, databases."
+            }
+          ]
+        },
+        {
+          "week_number": 3,
+          "is_campsite": false,
+          "total_hours": 4.0,
+          "topics": [
+            {
+              "id": "recovery_practice:Computers and Electronics",
+              "label": "Practice: Computers and Electronics",
+              "topic_type": "practice",
+              "track": "technical",
+              "estimated_hours": 4.0,
+              "high_priority": true,
+              "detail": "Targeted practice problems on the missed concepts."
+            }
+          ]
+        },
+        {
+          "week_number": 4,
+          "is_campsite": true,
+          "total_hours": 1.0,
+          "topics": [
+            {
+              "id": "recovery_reassess:Computers and Electronics",
+              "label": "Mini-assessment: Computers and Electronics",
+              "topic_type": "reassessment",
+              "track": "technical",
+              "estimated_hours": 1.0,
+              "high_priority": true,
+              "detail": "Short check before returning to the main roadmap."
+            }
+          ]
+        },
+        {
+          "week_number": 5,
+          "is_campsite": false,
+          "total_hours": 23.4,
+          "topics": [
+            {
+              "id": "knowledge:2.C.3.a",
+              "label": "Computers and Electronics",
+              "topic_type": "onet_knowledge",
+              "track": "technical",
+              "estimated_hours": 23.4,
+              "high_priority": true,
+              "detail": "Computers and Electronics is one of the most important skills for this career (importance 4.2/5), typically needed at a proficiency level of 5.8/7."
+            }
+          ]
+        },
+        {
+          "week_number": 6,
+          "is_campsite": false,
+          "total_hours": 7.5,
+          "topics": [
+            {
+              "id": "transferable_skills:2.B.3.e",
+              "label": "Programming",
+              "topic_type": "onet_transferable",
+              "track": "technical",
+              "estimated_hours": 7.5,
+              "high_priority": true,
+              "detail": "Programming is an important skill for this career (importance 3.8/5), typically needed at a proficiency level of 3.9/7."
+            }
+          ]
+        },
+        {
+          "week_number": 7,
+          "is_campsite": false,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:Amazon Web Services AWS software",
+              "label": "Amazon Web Services AWS software",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: Data base user interface and query software."
+            }
+          ]
+        },
+        {
+          "week_number": 8,
+          "is_campsite": true,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:Apache Hadoop",
+              "label": "Apache Hadoop",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: Data base management system software."
+            }
+          ]
+        },
+        {
+          "week_number": 9,
+          "is_campsite": false,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:Apache Spark",
+              "label": "Apache Spark",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: Business intelligence and data analysis software."
+            }
+          ]
+        },
+        {
+          "week_number": 10,
+          "is_campsite": false,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:C++",
+              "label": "C++",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: Object or component oriented development software."
+            }
+          ]
+        },
+        {
+          "week_number": 11,
+          "is_campsite": false,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:Git",
+              "label": "Git",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: File versioning software."
+            }
+          ]
+        },
+        {
+          "week_number": 12,
+          "is_campsite": true,
+          "total_hours": 15.0,
+          "topics": [
+            {
+              "id": "tool:Microsoft Azure software",
+              "label": "Microsoft Azure software",
+              "topic_type": "tool",
+              "track": "technical",
+              "estimated_hours": 15.0,
+              "high_priority": true,
+              "detail": "Hot technology. In demand. Category: Development environment software."
+            }
+          ]
+        }
+      ]
+    },
+    "professional": {
+      "track": "professional",
+      "weeks_planned": 20,
+      "total_hours": 118.1,
+      "weekly_hour_budget": 1.1,
+      "milestones": [
+        {
+          "week_number": 1,
+          "is_campsite": false,
+          "total_hours": 6.9,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.1.a",
+              "label": "Reading Comprehension",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 6.9,
+              "high_priority": true,
+              "detail": "Reading Comprehension is an important skill for this career (importance 3.9/5), typically needed at a proficiency level of 4.6/7."
+            }
+          ]
+        },
+        {
+          "week_number": 2,
+          "is_campsite": false,
+          "total_hours": 6.6,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.2.b",
+              "label": "Active Learning",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 6.6,
+              "high_priority": true,
+              "detail": "Active Learning is an important skill for this career (importance 3.6/5), typically needed at a proficiency level of 4.4/7."
+            }
+          ]
+        },
+        {
+          "week_number": 3,
+          "is_campsite": false,
+          "total_hours": 6.2,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.1.c",
+              "label": "Writing",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 6.2,
+              "high_priority": true,
+              "detail": "Writing is an important skill for this career (importance 3.5/5), typically needed at a proficiency level of 4.1/7."
+            }
+          ]
+        },
+        {
+          "week_number": 4,
+          "is_campsite": true,
+          "total_hours": 5.6,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.1.d",
+              "label": "Speaking",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 5.6,
+              "high_priority": true,
+              "detail": "Speaking is an important skill for this career (importance 3.6/5), typically needed at a proficiency level of 3.8/7."
+            }
+          ]
+        },
+        {
+          "week_number": 5,
+          "is_campsite": false,
+          "total_hours": 5.6,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.1.b",
+              "label": "Active Listening",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 5.6,
+              "high_priority": true,
+              "detail": "Active Listening is an important skill for this career (importance 3.5/5), typically needed at a proficiency level of 3.8/7."
+            }
+          ]
+        },
+        {
+          "week_number": 6,
+          "is_campsite": false,
+          "total_hours": 3.8,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.1.e",
+              "label": "Mathematics",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 3.8,
+              "high_priority": true,
+              "detail": "Mathematics is one of the most important skills for this career (importance 4.4/5), typically needed at a proficiency level of 5.0/7."
+            }
+          ]
+        },
+        {
+          "week_number": 7,
+          "is_campsite": false,
+          "total_hours": 2.4,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.2.a",
+              "label": "Critical Thinking",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 2.4,
+              "high_priority": true,
+              "detail": "Critical Thinking is one of the most important skills for this career (importance 4.2/5), typically needed at a proficiency level of 4.6/7."
+            }
+          ]
+        },
+        {
+          "week_number": 8,
+          "is_campsite": true,
+          "total_hours": 7.1,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.b.4",
+              "label": "Deductive Reasoning",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 7.1,
+              "high_priority": true,
+              "detail": "Deductive Reasoning is one of the most important skills for this career (importance 4.2/5), typically needed at a proficiency level of 4.8/7."
+            }
+          ]
+        },
+        {
+          "week_number": 9,
+          "is_campsite": false,
+          "total_hours": 7.1,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.b.5",
+              "label": "Inductive Reasoning",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 7.1,
+              "high_priority": true,
+              "detail": "Inductive Reasoning is one of the most important skills for this career (importance 4.2/5), typically needed at a proficiency level of 4.8/7."
+            }
+          ]
+        },
+        {
+          "week_number": 10,
+          "is_campsite": false,
+          "total_hours": 6.9,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.a.1",
+              "label": "Oral Comprehension",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.9,
+              "high_priority": true,
+              "detail": "Oral Comprehension is an important skill for this career (importance 3.8/5), typically needed at a proficiency level of 4.6/7."
+            }
+          ]
+        },
+        {
+          "week_number": 11,
+          "is_campsite": false,
+          "total_hours": 6.8,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.a.2",
+              "label": "Written Comprehension",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.8,
+              "high_priority": true,
+              "detail": "Written Comprehension is one of the most important skills for this career (importance 4.0/5), typically needed at a proficiency level of 4.5/7."
+            }
+          ]
+        },
+        {
+          "week_number": 12,
+          "is_campsite": true,
+          "total_hours": 6.8,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.a.3",
+              "label": "Oral Expression",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.8,
+              "high_priority": true,
+              "detail": "Oral Expression is an important skill for this career (importance 3.6/5), typically needed at a proficiency level of 4.5/7."
+            }
+          ]
+        },
+        {
+          "week_number": 13,
+          "is_campsite": false,
+          "total_hours": 6.6,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.c.1",
+              "label": "Mathematical Reasoning",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.6,
+              "high_priority": true,
+              "detail": "Mathematical Reasoning is one of the most important skills for this career (importance 4.1/5), typically needed at a proficiency level of 4.4/7."
+            }
+          ]
+        },
+        {
+          "week_number": 14,
+          "is_campsite": false,
+          "total_hours": 6.4,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.a.4",
+              "label": "Written Expression",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.4,
+              "high_priority": true,
+              "detail": "Written Expression is an important skill for this career (importance 3.9/5), typically needed at a proficiency level of 4.2/7."
+            }
+          ]
+        },
+        {
+          "week_number": 15,
+          "is_campsite": false,
+          "total_hours": 6.2,
+          "topics": [
+            {
+              "id": "abilities:1.A.1.b.6",
+              "label": "Information Ordering",
+              "topic_type": "onet_abilities",
+              "track": "professional",
+              "estimated_hours": 6.2,
+              "high_priority": true,
+              "detail": "Information Ordering is one of the most important skills for this career (importance 4.1/5), typically needed at a proficiency level of 4.1/7."
+            }
+          ]
+        },
+        {
+          "week_number": 16,
+          "is_campsite": true,
+          "total_hours": 6.2,
+          "topics": [
+            {
+              "id": "transferable_skills:2.B.2.i",
+              "label": "Complex Problem Solving",
+              "topic_type": "onet_transferable",
+              "track": "professional",
+              "estimated_hours": 6.2,
+              "high_priority": true,
+              "detail": "Complex Problem Solving is an important skill for this career (importance 3.8/5), typically needed at a proficiency level of 4.1/7."
+            }
+          ]
+        },
+        {
+          "week_number": 17,
+          "is_campsite": false,
+          "total_hours": 5.4,
+          "topics": [
+            {
+              "id": "essential_skills:2.A.2.d",
+              "label": "Monitoring",
+              "topic_type": "onet_skill",
+              "track": "professional",
+              "estimated_hours": 5.4,
+              "high_priority": false,
+              "detail": "Monitoring is an important skill for this career (importance 3.2/5), typically needed at a proficiency level of 3.6/7."
+            }
+          ]
+        },
+        {
+          "week_number": 18,
+          "is_campsite": false,
+          "total_hours": 5.2,
+          "topics": [
+            {
+              "id": "knowledge:2.C.7.a",
+              "label": "English Language",
+              "topic_type": "onet_knowledge",
+              "track": "professional",
+              "estimated_hours": 5.2,
+              "high_priority": false,
+              "detail": "English Language is an important skill for this career (importance 3.0/5), typically needed at a proficiency level of 3.4/7."
+            }
+          ]
+        },
+        {
+          "week_number": 19,
+          "is_campsite": false,
+          "total_hours": 6.0,
+          "topics": [
+            {
+              "id": "transferable_skills:2.B.4.e",
+              "label": "Judgment and Decision Making",
+              "topic_type": "onet_transferable",
+              "track": "professional",
+              "estimated_hours": 6.0,
+              "high_priority": false,
+              "detail": "Judgment and Decision Making is an important skill for this career (importance 3.4/5), typically needed at a proficiency level of 4.0/7."
+            }
+          ]
+        },
+        {
+          "week_number": 20,
+          "is_campsite": true,
+          "total_hours": 4.3,
+          "topics": [
+            {
+              "id": "transferable_skills:2.B.5.a",
+              "label": "Time Management",
+              "topic_type": "onet_transferable",
+              "track": "professional",
+              "estimated_hours": 4.3,
+              "high_priority": false,
+              "detail": "Time Management is an important skill for this career (importance 3.0/5), typically needed at a proficiency level of 2.9/7."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "adaptation_event": {
+    "action": "recover",
+    "track": "technical",
+    "skill_element": "Computers and Electronics",
+    "score": 52.0,
+    "message": "Low score on Computers and Electronics (52/100) \u2014 recovery route inserted into the technical track (4 steps) before continuing.",
+    "inserted_topics": [
+      {
+        "label": "SQL",
+        "topic_type": "missed_prerequisite",
+        "estimated_hours": 5.0,
+        "detail": "Prerequisite review \u2014 Computers and Electronics depends on SQL, not yet solid."
+      },
+      {
+        "label": "Revision: Computers and Electronics",
+        "topic_type": "revision",
+        "estimated_hours": 3.0,
+        "detail": "Simplified re-explanation focused on: REST APIs, databases."
+      },
+      {
+        "label": "Practice: Computers and Electronics",
+        "topic_type": "practice",
+        "estimated_hours": 4.0,
+        "detail": "Targeted practice problems on the missed concepts."
+      },
+      {
+        "label": "Mini-assessment: Computers and Electronics",
+        "topic_type": "reassessment",
+        "estimated_hours": 1.0,
+        "detail": "Short check before returning to the main roadmap."
+      }
+    ],
+    "route_before": [
+      "W1: Computers and Electronics",
+      "W2: Programming",
+      "W3: Amazon Web Services AWS software",
+      "W4: Apache Hadoop",
+      "W5: Apache Spark",
+      "W6: C++",
+      "W7: Git",
+      "W8: Microsoft Azure software"
+    ],
+    "route_after": [
+      "W1: SQL",
+      "W2: Revision: Computers and Electronics",
+      "W3: Practice: Computers and Electronics",
+      "W4: Mini-assessment: Computers and Electronics",
+      "W5: Computers and Electronics",
+      "W6: Programming",
+      "W7: Amazon Web Services AWS software",
+      "W8: Apache Hadoop",
+      "W9: Apache Spark",
+      "W10: C++",
+      "W11: Git",
+      "W12: Microsoft Azure software"
+    ]
+  }
+}

@@ -1,0 +1,1394 @@
+[
+  {
+    "id": "res_0001",
+    "title": "Reading Comprehension Strategies",
+    "type": "course",
+    "skills": [
+      "Reading Comprehension"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": "https://www.coursera.org/courses?query=reading%20comprehension",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0002",
+    "title": "Khan Academy \u2014 Reading & Vocabulary",
+    "type": "free_resource",
+    "skills": [
+      "Reading Comprehension"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 3,
+    "url": "https://www.khanacademy.org/ela",
+    "source": "Khan Academy"
+  },
+  {
+    "id": "res_0003",
+    "title": "Active Reading Techniques",
+    "type": "video",
+    "skills": [
+      "Reading Comprehension"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=active+reading+comprehension+techniques",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0004",
+    "title": "Active Listening Skills Explained",
+    "type": "video",
+    "skills": [
+      "Active Listening"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=active+listening+skills",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0005",
+    "title": "MindTools \u2014 Active Listening",
+    "type": "free_resource",
+    "skills": [
+      "Active Listening"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 2,
+    "url": "https://www.mindtools.com/CommSkll/ActiveListening.htm",
+    "source": "MindTools"
+  },
+  {
+    "id": "res_0006",
+    "title": "Better Business Writing Skills",
+    "type": "course",
+    "skills": [
+      "Writing"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://www.coursera.org/courses?query=writing%20skills",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0007",
+    "title": "Purdue OWL \u2014 Writing Guides",
+    "type": "free_resource",
+    "skills": [
+      "Writing"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 3,
+    "url": "https://owl.purdue.edu/owl/general_writing/index.html",
+    "source": "Purdue OWL"
+  },
+  {
+    "id": "res_0008",
+    "title": "Write and publish a 5-post technical blog",
+    "type": "project",
+    "skills": [
+      "Writing"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 8,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0009",
+    "title": "Public Speaking Fundamentals",
+    "type": "video",
+    "skills": [
+      "Speaking"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=public+speaking+fundamentals",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0010",
+    "title": "Public Speaking Course",
+    "type": "course",
+    "skills": [
+      "Speaking"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 5,
+    "url": "https://www.coursera.org/courses?query=public%20speaking",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0011",
+    "title": "Record and self-review a 5-minute presentation",
+    "type": "project",
+    "skills": [
+      "Speaking"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 3,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0012",
+    "title": "Khan Academy \u2014 Math",
+    "type": "free_resource",
+    "skills": [
+      "Mathematics"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 10,
+    "url": "https://www.khanacademy.org/math",
+    "source": "Khan Academy"
+  },
+  {
+    "id": "res_0013",
+    "title": "Mathematics for Everyone",
+    "type": "course",
+    "skills": [
+      "Mathematics"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 8,
+    "url": "https://www.coursera.org/courses?query=mathematics",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0014",
+    "title": "Math Fundamentals Refresher",
+    "type": "video",
+    "skills": [
+      "Mathematics"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 2,
+    "url": "https://www.youtube.com/results?search_query=math+fundamentals+refresher",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0015",
+    "title": "Khan Academy \u2014 Science",
+    "type": "free_resource",
+    "skills": [
+      "Science"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 8,
+    "url": "https://www.khanacademy.org/science",
+    "source": "Khan Academy"
+  },
+  {
+    "id": "res_0016",
+    "title": "Intro to Scientific Thinking",
+    "type": "course",
+    "skills": [
+      "Science"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://www.coursera.org/courses?query=scientific%20thinking",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0017",
+    "title": "Critical Thinking Skills for the Professional",
+    "type": "course",
+    "skills": [
+      "Critical Thinking"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 5,
+    "url": "https://www.coursera.org/courses?query=critical%20thinking",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0018",
+    "title": "How to Think Critically",
+    "type": "video",
+    "skills": [
+      "Critical Thinking"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=how+to+think+critically",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0019",
+    "title": "Structured decision log: analyze 3 real decisions",
+    "type": "project",
+    "skills": [
+      "Critical Thinking"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 4,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0020",
+    "title": "Learning How to Learn (Coursera, free-to-audit)",
+    "type": "free_resource",
+    "skills": [
+      "Active Learning"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 15,
+    "url": "https://www.coursera.org/learn/learning-how-to-learn",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0021",
+    "title": "Effective Learning Techniques",
+    "type": "video",
+    "skills": [
+      "Active Learning"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=effective+learning+techniques",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0022",
+    "title": "Learning How to Learn (Coursera, free-to-audit)",
+    "type": "free_resource",
+    "skills": [
+      "Learning Strategies"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 15,
+    "url": "https://www.coursera.org/learn/learning-how-to-learn",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0023",
+    "title": "Study Skills and Learning Strategies",
+    "type": "course",
+    "skills": [
+      "Learning Strategies"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": "https://www.coursera.org/courses?query=learning%20strategies",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0024",
+    "title": "Self-Monitoring and Performance Tracking",
+    "type": "course",
+    "skills": [
+      "Monitoring"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 3,
+    "url": "https://www.coursera.org/courses?query=performance%20monitoring",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0025",
+    "title": "Build a personal weekly progress tracker (spreadsheet)",
+    "type": "project",
+    "skills": [
+      "Monitoring"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 3,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0026",
+    "title": "Emotional Intelligence at Work",
+    "type": "course",
+    "skills": [
+      "Social Perceptiveness"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 5,
+    "url": "https://www.coursera.org/courses?query=emotional%20intelligence",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0027",
+    "title": "Reading Social Cues at Work",
+    "type": "video",
+    "skills": [
+      "Social Perceptiveness"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=social+perceptiveness+workplace",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0028",
+    "title": "Team Coordination and Collaboration",
+    "type": "course",
+    "skills": [
+      "Coordination"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 5,
+    "url": "https://www.coursera.org/courses?query=team%20collaboration",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0029",
+    "title": "Plan and run a small group project with a shared task board",
+    "type": "project",
+    "skills": [
+      "Coordination"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0030",
+    "title": "Influence and Persuasion Skills",
+    "type": "course",
+    "skills": [
+      "Persuasion"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 5,
+    "url": "https://www.coursera.org/courses?query=persuasion",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0031",
+    "title": "The Science of Persuasion",
+    "type": "video",
+    "skills": [
+      "Persuasion"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=science+of+persuasion",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0032",
+    "title": "Successful Negotiation Strategies",
+    "type": "course",
+    "skills": [
+      "Negotiation"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://www.coursera.org/courses?query=negotiation",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0033",
+    "title": "PON \u2014 Negotiation Basics",
+    "type": "free_resource",
+    "skills": [
+      "Negotiation"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 2,
+    "url": "https://www.pon.harvard.edu/category/daily/negotiation-skills-daily/",
+    "source": "Harvard PON"
+  },
+  {
+    "id": "res_0034",
+    "title": "Instructional Design Basics",
+    "type": "course",
+    "skills": [
+      "Instructing"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://www.coursera.org/courses?query=instructional%20design",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0035",
+    "title": "Create a short how-to tutorial for a skill you know",
+    "type": "project",
+    "skills": [
+      "Instructing"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0036",
+    "title": "Customer Service Fundamentals",
+    "type": "course",
+    "skills": [
+      "Service Orientation"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": "https://www.coursera.org/courses?query=customer%20service",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0037",
+    "title": "What Great Customer Service Looks Like",
+    "type": "video",
+    "skills": [
+      "Service Orientation"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=customer+service+skills",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0038",
+    "title": "Complex Problem Solving Techniques",
+    "type": "course",
+    "skills": [
+      "Complex Problem Solving"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": "https://www.coursera.org/courses?query=problem%20solving",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0039",
+    "title": "Solve a real multi-step problem and document your process",
+    "type": "project",
+    "skills": [
+      "Complex Problem Solving"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0040",
+    "title": "Frameworks for Solving Complex Problems",
+    "type": "video",
+    "skills": [
+      "Complex Problem Solving"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=complex+problem+solving+frameworks",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0041",
+    "title": "Operations Analysis and Process Improvement",
+    "type": "course",
+    "skills": [
+      "Operations Analysis"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": "https://www.coursera.org/courses?query=operations%20analysis",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0042",
+    "title": "MIT OCW \u2014 Operations Management",
+    "type": "free_resource",
+    "skills": [
+      "Operations Analysis"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 10,
+    "url": "https://ocw.mit.edu/search/?q=operations%20management",
+    "source": "MIT OpenCourseWare"
+  },
+  {
+    "id": "res_0043",
+    "title": "Intro to Technology and Systems Design",
+    "type": "course",
+    "skills": [
+      "Technology Design"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": "https://www.coursera.org/courses?query=systems%20design",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0044",
+    "title": "Design a simple system diagram for a tool you use daily",
+    "type": "project",
+    "skills": [
+      "Technology Design"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 4,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0045",
+    "title": "MIT OCW \u2014 Engineering Design",
+    "type": "free_resource",
+    "skills": [
+      "Equipment Selection"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 8,
+    "url": "https://ocw.mit.edu/search/?q=engineering%20design",
+    "source": "MIT OpenCourseWare"
+  },
+  {
+    "id": "res_0046",
+    "title": "Software/Hardware Installation Best Practices",
+    "type": "video",
+    "skills": [
+      "Installation"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=installation+best+practices+it",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0047",
+    "title": "freeCodeCamp \u2014 Learn to Code",
+    "type": "free_resource",
+    "skills": [
+      "Programming"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 40,
+    "url": "https://www.freecodecamp.org/",
+    "source": "freeCodeCamp"
+  },
+  {
+    "id": "res_0048",
+    "title": "Python for Everybody",
+    "type": "course",
+    "skills": [
+      "Programming"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 30,
+    "url": "https://www.coursera.org/specializations/python",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0049",
+    "title": "Programming Fundamentals Crash Course",
+    "type": "video",
+    "skills": [
+      "Programming"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 3,
+    "url": "https://www.youtube.com/results?search_query=programming+fundamentals+crash+course",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0050",
+    "title": "Build a small CLI tool that solves a problem you have",
+    "type": "project",
+    "skills": [
+      "Programming"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 8,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0051",
+    "title": "Quality Control and Assurance Basics",
+    "type": "course",
+    "skills": [
+      "Quality Control Analysis"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 5,
+    "url": "https://www.coursera.org/courses?query=quality%20control",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0052",
+    "title": "Write a test/QA checklist for a project you built",
+    "type": "project",
+    "skills": [
+      "Quality Control Analysis"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 3,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0053",
+    "title": "Monitoring Systems and Dashboards",
+    "type": "course",
+    "skills": [
+      "Operations Monitoring"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 5,
+    "url": "https://www.coursera.org/courses?query=monitoring%20dashboards",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0054",
+    "title": "Build a simple metrics dashboard (spreadsheet or BI tool)",
+    "type": "project",
+    "skills": [
+      "Operations Monitoring"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0055",
+    "title": "Process Control Fundamentals",
+    "type": "course",
+    "skills": [
+      "Operation and Control"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 5,
+    "url": "https://www.coursera.org/courses?query=process%20control",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0056",
+    "title": "Preventive Maintenance Basics",
+    "type": "video",
+    "skills": [
+      "Equipment Maintenance"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=preventive+maintenance+basics",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0057",
+    "title": "Systematic Troubleshooting Methods",
+    "type": "video",
+    "skills": [
+      "Troubleshooting"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=systematic+troubleshooting+method",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0058",
+    "title": "Debug and document a real bug end-to-end",
+    "type": "project",
+    "skills": [
+      "Troubleshooting"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 4,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0059",
+    "title": "Repair Fundamentals",
+    "type": "video",
+    "skills": [
+      "Repairing"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=repair+fundamentals+tutorial",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0060",
+    "title": "Systems Analysis and Design",
+    "type": "course",
+    "skills": [
+      "Systems Analysis"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 8,
+    "url": "https://www.coursera.org/courses?query=systems%20analysis",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0061",
+    "title": "MIT OCW \u2014 Systems Engineering",
+    "type": "free_resource",
+    "skills": [
+      "Systems Analysis"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 10,
+    "url": "https://ocw.mit.edu/search/?q=systems%20engineering",
+    "source": "MIT OpenCourseWare"
+  },
+  {
+    "id": "res_0062",
+    "title": "Evaluating System Performance",
+    "type": "course",
+    "skills": [
+      "Systems Evaluation"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 5,
+    "url": "https://www.coursera.org/courses?query=system%20evaluation",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0063",
+    "title": "Decision-Making Skills",
+    "type": "course",
+    "skills": [
+      "Judgment and Decision Making"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 5,
+    "url": "https://www.coursera.org/courses?query=decision%20making",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0064",
+    "title": "Better Decision Making Frameworks",
+    "type": "video",
+    "skills": [
+      "Judgment and Decision Making"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=decision+making+frameworks",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0065",
+    "title": "MindTools \u2014 Time Management",
+    "type": "free_resource",
+    "skills": [
+      "Time Management"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 2,
+    "url": "https://www.mindtools.com/pages/main/newMN_HTE.htm",
+    "source": "MindTools"
+  },
+  {
+    "id": "res_0066",
+    "title": "Work Smarter, Not Harder: Time Management",
+    "type": "course",
+    "skills": [
+      "Time Management"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": "https://www.coursera.org/courses?query=time%20management",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0067",
+    "title": "Track your time for 1 week and identify 3 improvements",
+    "type": "project",
+    "skills": [
+      "Time Management"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0068",
+    "title": "Finance for Non-Financial Managers",
+    "type": "course",
+    "skills": [
+      "Management of Financial Resources"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": "https://www.coursera.org/courses?query=finance%20for%20managers",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0069",
+    "title": "Khan Academy \u2014 Personal Finance",
+    "type": "free_resource",
+    "skills": [
+      "Management of Financial Resources"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://www.khanacademy.org/college-careers-more/personal-finance",
+    "source": "Khan Academy"
+  },
+  {
+    "id": "res_0070",
+    "title": "Supply Chain and Resource Management Basics",
+    "type": "course",
+    "skills": [
+      "Management of Material Resources"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": "https://www.coursera.org/courses?query=resource%20management",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0071",
+    "title": "People Management Essentials",
+    "type": "course",
+    "skills": [
+      "Management of Personnel Resources"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": "https://www.coursera.org/courses?query=people%20management",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0072",
+    "title": "How to Manage People Effectively",
+    "type": "video",
+    "skills": [
+      "Management of Personnel Resources"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=how+to+manage+people+effectively",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0073",
+    "title": "freeCodeCamp \u2014 Python",
+    "type": "free_resource",
+    "skills": [
+      "Python"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 25,
+    "url": "https://www.freecodecamp.org/learn/scientific-computing-with-python/",
+    "source": "freeCodeCamp"
+  },
+  {
+    "id": "res_0074",
+    "title": "Python for Everybody",
+    "type": "course",
+    "skills": [
+      "Python"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 30,
+    "url": "https://www.coursera.org/specializations/python",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0075",
+    "title": "Build a data-cleaning script for a public dataset",
+    "type": "project",
+    "skills": [
+      "Python"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 8,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0076",
+    "title": "Khan Academy \u2014 SQL",
+    "type": "free_resource",
+    "skills": [
+      "SQL"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 8,
+    "url": "https://www.khanacademy.org/computing/computer-programming/sql",
+    "source": "Khan Academy"
+  },
+  {
+    "id": "res_0077",
+    "title": "SQL for Data Science",
+    "type": "course",
+    "skills": [
+      "SQL"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 8,
+    "url": "https://www.coursera.org/learn/sql-for-data-science",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0078",
+    "title": "Write 10 queries against a public SQL sample database",
+    "type": "project",
+    "skills": [
+      "SQL"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 5,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0079",
+    "title": "freeCodeCamp \u2014 Data Analysis with R",
+    "type": "free_resource",
+    "skills": [
+      "R"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 15,
+    "url": "https://www.freecodecamp.org/news/tag/r/",
+    "source": "freeCodeCamp"
+  },
+  {
+    "id": "res_0080",
+    "title": "R Programming",
+    "type": "course",
+    "skills": [
+      "R"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 15,
+    "url": "https://www.coursera.org/learn/r-programming",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0081",
+    "title": "freeCodeCamp \u2014 Java",
+    "type": "free_resource",
+    "skills": [
+      "Java"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 25,
+    "url": "https://www.freecodecamp.org/news/tag/java/",
+    "source": "freeCodeCamp"
+  },
+  {
+    "id": "res_0082",
+    "title": "Java Programming Fundamentals",
+    "type": "course",
+    "skills": [
+      "Java"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 20,
+    "url": "https://www.coursera.org/courses?query=java%20programming",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0083",
+    "title": "freeCodeCamp \u2014 JavaScript Algorithms",
+    "type": "free_resource",
+    "skills": [
+      "JavaScript"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 25,
+    "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
+    "source": "freeCodeCamp"
+  },
+  {
+    "id": "res_0084",
+    "title": "Build a small interactive web page with vanilla JS",
+    "type": "project",
+    "skills": [
+      "JavaScript"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 8,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0085",
+    "title": "Git & GitHub \u2014 Official Docs",
+    "type": "free_resource",
+    "skills": [
+      "Git"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 3,
+    "url": "https://docs.github.com/en/get-started",
+    "source": "GitHub"
+  },
+  {
+    "id": "res_0086",
+    "title": "Git and GitHub for Beginners",
+    "type": "video",
+    "skills": [
+      "Git"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 1,
+    "url": "https://www.youtube.com/results?search_query=git+and+github+for+beginners",
+    "source": "YouTube"
+  },
+  {
+    "id": "res_0087",
+    "title": "Put an existing project under version control with a clean commit history",
+    "type": "project",
+    "skills": [
+      "Git"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 2,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0088",
+    "title": "Microsoft \u2014 Excel Training",
+    "type": "free_resource",
+    "skills": [
+      "Excel"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://support.microsoft.com/en-us/excel",
+    "source": "Microsoft"
+  },
+  {
+    "id": "res_0089",
+    "title": "Excel Skills for Business",
+    "type": "course",
+    "skills": [
+      "Excel"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 12,
+    "url": "https://www.coursera.org/specializations/excel",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0090",
+    "title": "Build a budget or KPI tracker with formulas and a chart",
+    "type": "project",
+    "skills": [
+      "Excel"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0091",
+    "title": "AWS Skill Builder \u2014 Free Courses",
+    "type": "free_resource",
+    "skills": [
+      "AWS"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 10,
+    "url": "https://skillbuilder.aws/",
+    "source": "AWS"
+  },
+  {
+    "id": "res_0092",
+    "title": "AWS Cloud Practitioner Essentials",
+    "type": "course",
+    "skills": [
+      "AWS"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 8,
+    "url": "https://www.coursera.org/courses?query=aws%20cloud%20practitioner",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0093",
+    "title": "Docker \u2014 Official Get Started Guide",
+    "type": "free_resource",
+    "skills": [
+      "Docker"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": "https://docs.docker.com/get-started/",
+    "source": "Docker"
+  },
+  {
+    "id": "res_0094",
+    "title": "Containerize an existing small application",
+    "type": "project",
+    "skills": [
+      "Docker"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 5,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0095",
+    "title": "Tableau \u2014 Free Training Videos",
+    "type": "free_resource",
+    "skills": [
+      "Tableau"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://www.tableau.com/learn/training",
+    "source": "Tableau"
+  },
+  {
+    "id": "res_0096",
+    "title": "Build a dashboard from a public dataset",
+    "type": "project",
+    "skills": [
+      "Tableau"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0097",
+    "title": "Microsoft \u2014 Power BI Guided Learning",
+    "type": "free_resource",
+    "skills": [
+      "Power BI"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://learn.microsoft.com/en-us/power-bi/guided-learning/",
+    "source": "Microsoft"
+  },
+  {
+    "id": "res_0098",
+    "title": "Salesforce Trailhead",
+    "type": "free_resource",
+    "skills": [
+      "Salesforce"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 8,
+    "url": "https://trailhead.salesforce.com/",
+    "source": "Salesforce"
+  },
+  {
+    "id": "res_0099",
+    "title": "freeCodeCamp \u2014 C++",
+    "type": "free_resource",
+    "skills": [
+      "C++"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 20,
+    "url": "https://www.freecodecamp.org/news/tag/c-plus-plus/",
+    "source": "freeCodeCamp"
+  },
+  {
+    "id": "res_0100",
+    "title": "Kubernetes \u2014 Official Basics Tutorial",
+    "type": "free_resource",
+    "skills": [
+      "Kubernetes"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
+    "source": "Kubernetes"
+  },
+  {
+    "id": "res_0101",
+    "title": "Linux Journey",
+    "type": "free_resource",
+    "skills": [
+      "Linux"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 10,
+    "url": "https://linuxjourney.com/",
+    "source": "Linux Journey"
+  },
+  {
+    "id": "res_0102",
+    "title": "Set up and configure a personal Linux server/VM",
+    "type": "project",
+    "skills": [
+      "Linux"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 5,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0103",
+    "title": "TensorFlow \u2014 Official Tutorials",
+    "type": "free_resource",
+    "skills": [
+      "TensorFlow"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 12,
+    "url": "https://www.tensorflow.org/tutorials",
+    "source": "TensorFlow"
+  },
+  {
+    "id": "res_0104",
+    "title": "Adobe \u2014 Photoshop Tutorials",
+    "type": "free_resource",
+    "skills": [
+      "Adobe Photoshop"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://helpx.adobe.com/photoshop/tutorials.html",
+    "source": "Adobe"
+  },
+  {
+    "id": "res_0105",
+    "title": "Figma \u2014 Official Learn Hub",
+    "type": "free_resource",
+    "skills": [
+      "Figma"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": "https://www.figma.com/resources/learn-design/",
+    "source": "Figma"
+  },
+  {
+    "id": "res_0106",
+    "title": "Design a 3-screen app mockup in Figma",
+    "type": "project",
+    "skills": [
+      "Figma"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 5,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0107",
+    "title": "Google Analytics Academy",
+    "type": "free_resource",
+    "skills": [
+      "Google Analytics"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": "https://analytics.google.com/analytics/academy/",
+    "source": "Google"
+  },
+  {
+    "id": "res_0108",
+    "title": "Atlassian \u2014 Jira Tutorials",
+    "type": "free_resource",
+    "skills": [
+      "Jira"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 3,
+    "url": "https://www.atlassian.com/software/jira/guides",
+    "source": "Atlassian"
+  },
+  {
+    "id": "res_0109",
+    "title": "Intuit \u2014 QuickBooks Tutorials",
+    "type": "free_resource",
+    "skills": [
+      "QuickBooks"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 4,
+    "url": "https://quickbooks.intuit.com/tutorials/",
+    "source": "Intuit"
+  },
+  {
+    "id": "res_0110",
+    "title": "MathWorks \u2014 MATLAB Onramp (free)",
+    "type": "free_resource",
+    "skills": [
+      "MATLAB"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 6,
+    "url": "https://matlabacademy.mathworks.com/",
+    "source": "MathWorks"
+  },
+  {
+    "id": "res_0111",
+    "title": "Khan Academy \u2014 Statistics and Probability",
+    "type": "free_resource",
+    "skills": [
+      "Statistics"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 12,
+    "url": "https://www.khanacademy.org/math/statistics-probability",
+    "source": "Khan Academy"
+  },
+  {
+    "id": "res_0112",
+    "title": "Statistics with Python",
+    "type": "course",
+    "skills": [
+      "Statistics"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 15,
+    "url": "https://www.coursera.org/specializations/statistics-with-python",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0113",
+    "title": "Run a full statistical analysis on a public dataset",
+    "type": "project",
+    "skills": [
+      "Statistics"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 6,
+    "url": null,
+    "source": "Local Project"
+  },
+  {
+    "id": "res_0114",
+    "title": "Google \u2014 Machine Learning Crash Course",
+    "type": "free_resource",
+    "skills": [
+      "Machine Learning"
+    ],
+    "difficulty": "Beginner",
+    "estimated_hours": 15,
+    "url": "https://developers.google.com/machine-learning/crash-course",
+    "source": "Google"
+  },
+  {
+    "id": "res_0115",
+    "title": "Machine Learning Specialization",
+    "type": "course",
+    "skills": [
+      "Machine Learning"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 40,
+    "url": "https://www.coursera.org/specializations/machine-learning-introduction",
+    "source": "Coursera"
+  },
+  {
+    "id": "res_0116",
+    "title": "Train and evaluate a simple ML model on a public dataset",
+    "type": "project",
+    "skills": [
+      "Machine Learning"
+    ],
+    "difficulty": "Intermediate",
+    "estimated_hours": 10,
+    "url": null,
+    "source": "Local Project"
+  }
+]

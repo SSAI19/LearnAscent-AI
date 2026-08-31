@@ -1,0 +1,12 @@
+﻿.venv/
+.venv-py312/
+Python312-32/
+LearnAscent-AI-chatbot-update/
+LearnAscent-AI/
+.env
+__pycache__/
+*.pyc
+*.db
+*.sqlite
+*.sqlite3
+node_modules/
